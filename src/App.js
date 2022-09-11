@@ -1,11 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import "./css/main.css"
+import Main from './components/Main';
+import Darkmode from './components/Darkmode';
 
 function App() {
   return (
     <div className="App">
-   <h1>Hi👋,</h1>
-   <h2>My name is Abhishek Pratap Solanki</h2>
+      <Darkmode>
+      <Main />
+      </Darkmode>
     </div>
   );
 }

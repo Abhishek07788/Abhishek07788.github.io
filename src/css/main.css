@@ -1,0 +1,75 @@
+
+*{
+    font-family: Ubuntu, sans-serif;   
+ }
+   
+.navH{
+    width: 80%;
+}
+.navH:hover{
+    background-color: #fe9119;
+    color: white;
+    border-radius: 10px;
+    padding: 5px 0px 5px 0px;
+}
+
+.tagLine {
+    /* display: flex; */
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  #madeByMohit {
+    width: 0ch;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: tagline 10s  infinite alternate;;
+    border-right: 3px solid #fe9119; 
+  }
+  
+  @keyframes tagline {
+      0% {
+          width: 0ch;
+      }
+      50% {
+          width: 23.5ch;
+      }
+  }
+  
+  
+  @media screen and (max-width: 800px) {
+    .mainBox {
+        gap: 30px;
+    }
+  
+    .box {
+        min-height: 180px;
+    }
+  
+    textarea {
+        min-height: 180px;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .mainBox {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 60px;
+    }
+  
+    .box {
+        min-height: 150px;
+        margin-top: 20px;
+    }
+  
+    textarea {
+        min-height: 150px;
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    .navbar>h1{
+        font-size: 28px;
+    }
+  }
+  
