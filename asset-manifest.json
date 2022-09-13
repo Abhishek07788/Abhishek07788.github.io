@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.css": "/static/css/main.a41b7fff.css",
-    "main.js": "/static/js/main.dcb23e35.js",
+    "main.css": "/static/css/main.0c314262.css",
+    "main.js": "/static/js/main.9faa9047.js",
     "static/js/787.128fc6e9.chunk.js": "/static/js/787.128fc6e9.chunk.js",
     "static/media/animotoClone.gif": "/static/media/animotoClone.5a13ffca8d751030dfcc.gif",
     "static/media/profile-pic (1).png": "/static/media/profile-pic (1).d9a1ff55c37283b7c912.png",
+    "static/media/emailimg.png": "/static/media/emailimg.3c0f564e00c7456623d9.png",
     "static/media/Abhishek_Pratrap_Solanki Resume.pdf": "/static/media/Abhishek_Pratrap_Solanki Resume.08322978df4a3e4ae2ce.pdf",
     "static/media/chakraui.png": "/static/media/chakraui.15320604467d004df871.png",
     "static/media/mongoose.png": "/static/media/mongoose.51275a001caf5e6e30d4.png",
@@ -21,12 +22,12 @@
     "static/media/html.svg": "/static/media/html.8664168d5bc90b1a24396f85aadbf623.svg",
     "static/media/materialui.svg": "/static/media/materialui.87264df237ee700ba78bb58ff701a6d3.svg",
     "static/media/npm.svg": "/static/media/npm.87689eab730642c86d2b01f3ef4a19e3.svg",
-    "main.a41b7fff.css.map": "/static/css/main.a41b7fff.css.map",
-    "main.dcb23e35.js.map": "/static/js/main.dcb23e35.js.map",
+    "main.0c314262.css.map": "/static/css/main.0c314262.css.map",
+    "main.9faa9047.js.map": "/static/js/main.9faa9047.js.map",
     "787.128fc6e9.chunk.js.map": "/static/js/787.128fc6e9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a41b7fff.css",
-    "static/js/main.dcb23e35.js"
+    "static/css/main.0c314262.css",
+    "static/js/main.9faa9047.js"
   ]
 }
