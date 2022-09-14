@@ -1,39 +1,62 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import myimage from "../Image/profile-pic (1).png";
 import resume from "../Image/Abhishek_Pratrap_Solanki Resume.pdf";
-import {
-  SimpleGrid,
-  Box,
-  Heading,
-  Text,
-  Image,
-  Button,
-} from "@chakra-ui/react";
+import { SimpleGrid, Box, Heading, Image, Button } from "@chakra-ui/react";
 import { DownloadIcon, ViewIcon } from "@chakra-ui/icons";
 
-const Home = ({ theme }) => {
+const Home = (props) => {
+  const { checkTheme } = props;
+  const [theme, setTheme] = useState({});
+
+  // =================== Theme 1 =====================>
+
+  useEffect(() => {
+    if (checkTheme) {
+      setTheme({
+        color: "white",
+        backgroundColor: "#0f1624",
+      });
+    } else {
+      setTheme({
+        color: "black",
+        backgroundColor: "#edf2f8",
+      });
+    }
+  }, [checkTheme]);
+
   return (
     <div>
-
-      {/* ---------------- Name ------------------ */}
+      {/* ---------------- Main Div ------------------ */}
       <SimpleGrid
         pl={70}
         bg={"#edf2f8"}
         textAlign={"left"}
-        columns={[1, 1, 2]}
+        columns={[1, 1, 2, 2]}
         m="auto"
         alignItems={"center"}
         mt={0.5}
-        pt={"65px"}
+        pt={["65px", "65px", "95px", "65px"]}
         pb={"65px"}
         style={theme}
       >
-        <SimpleGrid m={["auto","auto","auto"]} w={["98%", "98%", "85%"]}>
+
+
+      
+    {/*======================== Left side Div ======================= */}
+
+        <SimpleGrid
+          m={["auto", "auto", "auto", "auto"]}
+          w={["98%", "98%", "98%", "85%"]}
+        >
+
+        
+    {/*======================== Hello heading ======================= */}
+
           <Heading
-            fontSize={[25,25,30]}
+            fontSize={[25, 25, 25, 30]}
             color={"#1a202c"}
             fontFamily={"'Times New Roman', Times, serif"}
-            ml={[0,0,50]}
+            ml={[0, 0, 0, 50]}
             alignItems="center"
             display="flex"
             style={theme}
@@ -50,48 +73,79 @@ const Home = ({ theme }) => {
             </span>
             , My name is
           </Heading>
-          <Heading mt={[0,-1,2]} ml={[0,0,50]} fontSize={[32,32,50]}>
+
+          
+    {/*======================== Abhishek Heading ======================= */}
+
+          <Heading
+            mt={[0, 0, 0, 2]}
+            ml={[0, 0, 0, 50]}
+            fontSize={[32, 32, 32, 50]}
+          >
             Abhishek Pratap Solanki
           </Heading>
 
+    
+    {/*======================== Animation Heading ======================= */}
+
           <div className="tagLine">
-            <Heading ml={[0,0,50]} fontSize={[26,27,40]} id="madeByMohit">
-              I am a 
+            <Heading
+              ml={[0, 0, 0, 50]}
+              fontSize={[23, 24, 23, 30]}
+              id="madeByAbhishek"
+            >
+              I am a
               <span style={{ color: "#fe9119" }}> Full Stack Developer.</span>
             </Heading>
           </div>
 
-          {/*------------------ Resume ---------------- */}
+      
+    {/*======================== Resume buttons ======================= */}
 
           <SimpleGrid display={"flex"}>
-            <a href="https://drive.google.com/file/d/1tCg8poSlmD-uHdvAUT2vjEdVFW_Dd_fe/view?usp=sharing">
+            
+    {/*======================== View Resume ======================= */}
+
+            <a href={resume}>
               <Button
-                fontSize={"18px"}
                 border="2px solid #fe9119"
-                ml={[0,0,50]}
+                ml={[0, 0, 0, 50]}
                 mt={8}
                 bg={"#fe9119"}
                 color="black"
-                w="120px"
+                fontSize={["14px", "14px", "18px"]}
+                w={["90px", "90px", "120px"]}
                 mb={"40px"}
-                _hover={{ w: "123px", color: "#fe9119", bg: "white" }}
+                transition="all .4s ease-in-out"
+                _hover={{
+                  color: "#fe9119",
+                  bg: "white",
+                  transform: "scale(1.1)",
+                }}
               >
                 Resume
                 <ViewIcon ml={1} />
               </Button>
             </a>
+            
+    {/*======================== Download Resume ======================= */}
+
             <a href={resume} download={"Abhishek Pratap Solanki Resume"}>
               <Button
-                fontSize={"18px"}
                 border="2px solid #fe9119"
                 ml={3}
                 mt={8}
                 bg={"#fe9119"}
                 color="black"
-                w="20px"
-                mb={"40px"}
+                fontSize={["18px", "18px", "18px"]}
+                w={["30px", "30px", "40px"]}
                 fontWeight={600}
-                _hover={{ w: "23px", color: "#fe9119", bg: "white" }}
+                transition="all .4s ease-in-out"
+                _hover={{
+                  color: "#fe9119",
+                  bg: "white",
+                  transform: "scale(1.1)",
+                }}
               >
                 <DownloadIcon />
               </Button>
@@ -99,9 +153,22 @@ const Home = ({ theme }) => {
           </SimpleGrid>
         </SimpleGrid>
 
-        {/* ----------------------- Image ---------------------- */}
-        <Box>
-          <Image m={"auto"} w={400} src={myimage} alt="Avatar" />
+      
+    {/*======================== My Image (Avatar) ======================= */}
+
+        <Box ml={["-26%", "-18%", "1%"]}>
+          <Image
+            borderRadius={"50%"}
+            border={"1px solid #dc3544"}
+            m={"auto"}
+            w={[320, 320, 290, 320]}
+            transition="all 1s ease-in-out"
+            _hover={{
+              transform: "scale(1.2)",
+            }}
+            src={myimage}
+            alt="Avatar"
+          />
         </Box>
       </SimpleGrid>
     </div>
