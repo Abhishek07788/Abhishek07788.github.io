@@ -13,17 +13,14 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const About = (props) => {
-  
-  const { checkTheme } = props;
+  const { checkTheme,aboutScroll } = props;
   const [theme, setTheme] = useState({});
-  
-  
+
   // =================== Animation =====================>
 
   useEffect(() => {
     AOS.init({ offset: 300, duration: 1000 });
   }, []);
-
 
   // =================== Theme 1 =====================>
 
@@ -41,20 +38,16 @@ const About = (props) => {
     }
   }, [checkTheme]);
 
-  
-  
-
   return (
-    <div className="mainDiv" style={theme}>
+    <div ref={aboutScroll} className="mainDiv" style={theme}>
       <Heading fontSize={40} color={"#fe9119"}>
         About <span style={theme}>Me</span>
       </Heading>
 
-    {/*======================== Main Div ======================= */}
+      {/*======================== Main Div ======================= */}
 
       <SimpleGrid pb={"10%"} m={"auto"} mt={"5%"} columns={[1, 1, 1, 2]}>
-  
-    {/*======================== Coding Gif ======================= */}
+        {/*======================== Coding Gif ======================= */}
 
         <Image
           data-aos="zoom-in"
@@ -63,11 +56,11 @@ const About = (props) => {
           src="https://www.slnsoftwares.com/images/gif/working_man.gif"
           alt="Projects"
         />
-    
-    {/*======================== LISt me Main div ======================= */}
 
-        <SimpleGrid data-aos="zoom-in">   
-    {/*======================== List ======================= */}
+        {/*======================== LISt me Main div ======================= */}
+
+        <SimpleGrid data-aos="zoom-in">
+          {/*======================== List ======================= */}
 
           <List
             m={"auto"}
@@ -84,16 +77,14 @@ const About = (props) => {
               creating thing that live on the internet.
             </ListItem>
             <ListItem mt={3}>
-              <ListIcon as={CheckCircleIcon} color="#fe9119" />I have complated
-              Bachelor of Science, Graduation from DR. BHIMRAO AMBEDKAR
-              UNIVERSITY, AGRA from <b>2019 to 2022 </b>, Apart from graduation
-              I have also completed a 1 year <b>O Level </b>Nielit computer
-              diploma. Where I learned the <b>C language </b>and basics of
-              Computer. from <b>2019 to 2020</b>
+              <ListIcon as={CheckCircleIcon} color="#fe9119" />
+              Quick learner and an aspiring full-stack web developer with core
+              knowledge of MERN stack technology. Looking forward to applying
+              and enhancing my skills and knowledge as a developer.
             </ListItem>
             <ListItem mt={3}>
               <ListIcon as={CheckCircleIcon} color="#fe9119" />
-              I'm a <b>Full Stack Developer </b>with hands on experience in
+              <b>Full Stack Developer </b>with hands on experience in
               building cool React Apps. Works efficiently both in frontend as
               well as backend and is proficient in Data Structure and Algorithms
               with good problem solving skills.

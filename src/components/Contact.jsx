@@ -6,6 +6,8 @@ import {
   Button,
   Input,
   Text,
+  useToast,
+  Textarea,
 } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { AiFillLinkedin, AiFillGithub, AiOutlineMail } from "react-icons/ai";
@@ -16,17 +18,41 @@ import { useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import emailimg from "../Image/emailimg.png";
+import emailjs from "emailjs-com";
 
 const Contact = (props) => {
-  
-  const { checkTheme } = props;
+  const { checkTheme, contactScroll } = props;
   const [theme, setTheme] = useState({});
   const [theme1, setTheme1] = useState({});
   const [icon, setIcon] = useState(false);
   const [show, setShow] = useState({});
+  const toast = useToast();
 
-  
-// =================== Animation =====================>
+
+  //------------------------ Email Send --------------
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs.sendForm(
+      "service_ml5brp5",
+      "template_xe5tl5l",
+      e.target,
+      "_-SYa4AW4mbtbVQiF"
+    ).then(res=>{
+      console.log(res)
+    }).catch((err)=>{
+      console.log(err)
+    })
+
+    toast({
+      title: "Thanks for contacting me",
+      description: "I will reply soon ",
+      status: "success",
+      duration: 9000,
+      isClosable: true,
+    });
+  };
+
+  // =================== Animation =====================>
 
   useEffect(() => {
     AOS.init({ offset: 300, duration: 1000 });
@@ -41,8 +67,6 @@ const Contact = (props) => {
       setShow({ display: "none" });
     }
   }, [icon]);
-
-
 
   // =================== Theme 1 =====================>
 
@@ -77,13 +101,12 @@ const Contact = (props) => {
   }, [checkTheme]);
 
   return (
-    <div className="mainDiv" style={theme}>
+    <div ref={contactScroll} className="mainDiv" style={theme}>
       <Heading fontSize={40} color="#fe9119">
         Contact <span style={theme}>Me</span>
       </Heading>
       <SimpleGrid columns={[1, 1, 1, 2]} pb="70px">
-
-    {/* ================== Email and boy image ================== */}
+        {/* ================== Email and boy image ================== */}
 
         <Image
           mr={["auto", "auto", "auto", "-100px"]}
@@ -95,13 +118,14 @@ const Contact = (props) => {
           alt="emailimg"
         />
 
-
-    {/* ================== Social midea Buttons ================== */}
-
-
         <SimpleGrid data-aos="zoom-in">
+          {/* ================== Social midea Buttons ================== */}
+
           <Box display={"flex"} m="auto" gap={[2, 2, 7, 8]} mt="100px">
-            <a href="http://www.linkedin.com/in/abhishekpratapsolanki">
+            <a
+              href="http://www.linkedin.com/in/abhishekpratapsolanki"
+              target="_blank"
+            >
               <Button
                 border="2px solid #0a66c2"
                 fontSize={[14, 14, 14, 17]}
@@ -116,7 +140,7 @@ const Contact = (props) => {
                   bg: "#ffff",
                   color: "#0a66c2",
                 }}
-                data-aos="zoom-in"
+                data-aos="fade-right"
               >
                 <AiFillLinkedin
                   style={{ marginRight: "4", fontSize: "20px" }}
@@ -124,7 +148,7 @@ const Contact = (props) => {
                 Linkdin
               </Button>
             </a>
-            <a href="https://github.com/Abhishek07788">
+            <a href="https://github.com/Abhishek07788" target="_blank">
               <Button
                 border="2px solid #3f3d55"
                 fontSize={[14, 14, 14, 17]}
@@ -139,7 +163,7 @@ const Contact = (props) => {
                   bg: "#ffff",
                   color: "#3f3d55",
                 }}
-                data-aos="zoom-in"
+                data-aos="fade-right"
               >
                 <AiFillGithub style={{ marginRight: "4", fontSize: "20px" }} />
                 Github
@@ -160,7 +184,7 @@ const Contact = (props) => {
                   bg: "#ffff",
                   color: "#f04244",
                 }}
-                data-aos="zoom-in"
+                data-aos="fade-left"
               >
                 <AiOutlineMail style={{ marginRight: "4", fontSize: "20px" }} />
                 Email
@@ -181,80 +205,87 @@ const Contact = (props) => {
                   bg: "#ffff",
                   color: "#4db946",
                 }}
-                data-aos="zoom-in"
+                data-aos="fade-left"
               >
                 <FiPhoneCall style={{ marginRight: "4", fontSize: "20px" }} />
               </Button>
             </a>
           </Box>
 
-
-
-
-        {/* ================== Email Form ================== */}
-
+          {/* ================== Email Form ================== */}
 
           <Box m={"auto"} mt="15px" width="65%">
-            <Heading fontSize={26} style={theme} textAlign="left">
-              Send me <span style={{ color: "#fe9119" }}>Email.</span>
-            </Heading>
-            <Input
-              style={theme1}
-              placeholder="Full Name"
-              borderBottom={"1px solid grey"}
-              size="md"
-            />
-            <Input
-              type={"email"}
-              style={theme1}
-              mt="16px"
-              placeholder="Email"
-              borderBottom={"1px solid grey"}
-              size="md"
-            />
-            <Input
-              type={"Number"}
-              style={theme1}
-              mt="16px"
-              placeholder="Number"
-              borderBottom={"1px solid grey"}
-              size="md"
-            />
-            <textarea
-              style={theme1}
-              id="Message"
-              placeholder="Your Message"
-              className="form-control"
-              name="message"
-              rows="5"
-              required
-            ></textarea>
-            <Button
-              border="2px solid #fe9119"
-              fontSize={18}
-              mt={1}
-              color="black"
-              bg="#fe9119"
-              w="100%"
-              transition="all .4s ease-in-out"
-              _hover={{
-                bg: "#ffff",
-                color: "#fe9119",
-              }}
-              //data-aos="zoom-in"
+            <Heading
+              data-aos="fade-right"
+              fontSize={22}
+              style={theme}
+              textAlign="left"
             >
-              <AiOutlineMail style={{ marginRight: "4", fontSize: "20px" }} />
-              Submit
-            </Button>
+              Send me <span style={{ color: "#fe9119" }}>Message.</span>
+            </Heading>
+            <form onSubmit={sendEmail}>
+              <Input
+                // data-aos="fade-down"
+                style={theme1}
+                placeholder="Full Name"
+                borderBottom={"1px solid grey"}
+                size="md"
+                required
+                name="name"
+              />
+              <Input
+                type={"email"}
+                style={theme1}
+                mt="16px"
+                placeholder="Email"
+                borderBottom={"1px solid grey"}
+                // data-aos="fade-down"
+                size="md"
+                required
+                name="email"
+              />
+              <Input
+                type={"Number"}
+                style={theme1}
+                mt="16px"
+                placeholder="Number"
+                borderBottom={"1px solid grey"}
+                size="md"
+                required
+                name="number"
+                // data-aos="fade-down"
+              />
+              <Textarea
+                style={theme1}
+                id="Message"
+                placeholder="Your Message"
+                className="form-control"
+                name="message"
+                rows="5"
+                required
+              ></Textarea>
+              <Input
+                type={"submit"}
+                border="2px solid #fe9119"
+                fontSize={18}
+                mt={1}
+                color="black"
+                bg="#fe9119"
+                w="100%"
+                transition="all .4s ease-in-out"
+                _hover={{
+                  bg: "#f04244",
+                  color: "#ffff",
+                }}
+                //data-aos="zoom-in"
+              />
+            </form>
           </Box>
         </SimpleGrid>
       </SimpleGrid>
-      
-      
-      
+
       {/* ================== Right side Icons ================== */}
-      
-      
+
       <Box
         position={"fixed"}
         bottom="0"
@@ -264,7 +295,10 @@ const Contact = (props) => {
         pb={["80px", "80px", "160px", "80px"]}
         style={show}
       >
-        <a href="http://www.linkedin.com/in/abhishekpratapsolanki">
+        <a
+          href="http://www.linkedin.com/in/abhishekpratapsolanki"
+          target="_blank"
+        >
           <Button
             border="2px solid #0a66c2"
             color="#ffff"
@@ -284,7 +318,7 @@ const Contact = (props) => {
             <AiFillLinkedin />
           </Button>
         </a>
-        <a href="https://github.com/Abhishek07788">
+        <a href="https://github.com/Abhishek07788" target="_blank">
           <Button
             border="2px solid #3f3d55"
             color="#ffff"
@@ -346,7 +380,7 @@ const Contact = (props) => {
         </a>
       </Box>
 
-     {/* ================== Plus Button ================== */}
+      {/* ================== Plus Button ================== */}
       <Button
         onClick={() => setIcon(!icon)}
         position={"fixed"}
@@ -354,9 +388,9 @@ const Contact = (props) => {
         right="0"
         mr={[4, 4, 7, 4]}
         mb={["8", "8", "95px", "8"]}
-        border="2px solid red"
+        border="2px solid #ff6600"
         color="#ffff"
-        bg="red"
+        bg="#ff6600"
         fontSize={["16px", "17px", "20px", "20px"]}
         p={[0, 0, "20px", 0]}
         pt={["none", "none", "25px", "none"]}
@@ -366,13 +400,13 @@ const Contact = (props) => {
         _hover={{
           transform: "scale(1.1)",
           bg: "#ffff",
-          color: "red",
+          color: "#ff6600",
         }}
       >
         {icon ? <ImCross /> : <BsPlusLg />}
       </Button>
 
-      <Text pb={4} fontSize={14} w={"90%"} m="auto" textAlign={"center"}>
+      <Text pb={10} fontSize={14} w={"90%"} m="auto" textAlign={"center"}>
         Designed and build by Abhishek Pratap Solanki, 2022 All right reserved.
       </Text>
     </div>

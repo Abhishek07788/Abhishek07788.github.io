@@ -1,5 +1,5 @@
 import { SimpleGrid, Box, Heading, Text, Image } from "@chakra-ui/react";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { BsGithub } from "react-icons/bs";
 import { HiEye } from "react-icons/hi";
 import { useState } from "react";
@@ -10,9 +10,11 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const Projects = (props) => {
-  const { checkTheme } = props;
+  const { checkTheme, projectScroll } = props;
   const [theme, setTheme] = useState({});
   const [theme1, setTheme1] = useState({});
+
+
 
   // =================== Animation =====================>
 
@@ -52,7 +54,7 @@ const Projects = (props) => {
   }, [checkTheme]);
 
   return (
-    <div className="mainDiv" style={theme}>
+    <div ref={projectScroll} className="mainDiv" style={theme}>
       <Heading fontSize={40}>
         My <span style={{ color: "#fe9119" }}>Projects</span>
       </Heading>
@@ -118,10 +120,10 @@ const Projects = (props) => {
             fontSize={["30px", "30px", "36px", "40px"]}
             className="ProjectIcon"
           >
-            <a href="https://github.com/Abhishek07788/impartial-honey-6054/tree/main/lyst.com">
+            <a href="https://github.com/Abhishek07788/impartial-honey-6054/tree/main/lyst.com" target="_blank">
               <BsGithub className="gitEye" style={{ marginTop: "3" }} />
             </a>
-            <a href="https://cute-souffle-8b7dcd.netlify.app/">
+            <a href="https://cute-souffle-8b7dcd.netlify.app/" target="_blank">
               <HiEye mt={-1.5} className="gitEye" />
             </a>
           </Box>
@@ -177,10 +179,10 @@ const Projects = (props) => {
             fontSize={["30px", "30px", "36px", "40px"]}
             className="ProjectIcon"
           >
-            <a href="https://github.com/Abhishek07788/impartial-honey-6054/tree/main/lyst.com">
+            <a href="https://github.com/Abhishek07788/impartial-honey-6054/tree/main/lyst.com" target="_blank">
               <BsGithub className="gitEye" style={{ marginTop: "3" }} />
             </a>
-            <a href="https://cute-souffle-8b7dcd.netlify.app/">
+            <a href="https://cute-souffle-8b7dcd.netlify.app/" target="_blank">
               <HiEye mt={-1.5} className="gitEye" />
             </a>
           </Box>
@@ -236,10 +238,10 @@ const Projects = (props) => {
             fontSize={["30px", "30px", "36px", "40px"]}
             className="ProjectIcon"
           >
-            <a href="https://github.com/rohan209547mourya/deeply-tub-2367">
+            <a href="https://github.com/rohan209547mourya/deeply-tub-2367" target="_blank">
               <BsGithub className="gitEye" style={{ marginTop: "3" }} />
             </a>
-            <a href="https://bright-sopapillas-48eab1.netlify.app/html/business">
+            <a href="https://bright-sopapillas-48eab1.netlify.app/html/business" target="_blank">
               <HiEye mt={-1.5} className="gitEye" />
             </a>
           </Box>
@@ -294,10 +296,10 @@ const Projects = (props) => {
             fontSize={["30px", "30px", "36px", "40px"]}
             className="ProjectIcon"
           >
-            <a href="https://github.com/Abhishek07788/CoShedule-Website-Project-">
+            <a href="https://github.com/Abhishek07788/CoShedule-Website-Project-" target="_blank">
               <BsGithub className="gitEye" style={{ marginTop: "3" }} />
             </a>
-            <a href="https://bejewelled-lebkuchen-8a5107.netlify.app/">
+            <a href="https://bejewelled-lebkuchen-8a5107.netlify.app/" target="_blank">
               <HiEye mt={-1.5} className="gitEye" />
             </a>
           </Box>

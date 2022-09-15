@@ -33,7 +33,7 @@ import bootstrap from "../Image/bootstrap.svg"
 
 const Skills = (props) => {
   
-  const { checkTheme } = props;
+  const { checkTheme,skillScroll } = props;
   const [theme, setTheme] = useState({});
   const [theme1, setTheme1] = useState({});
   
@@ -78,7 +78,7 @@ const Skills = (props) => {
   }, [checkTheme]);
 
   return (
-    <div className="mainDiv" style={theme}>
+    <div ref={skillScroll} className="mainDiv" style={theme}>
       <Heading fontSize={40}>
         My <span style={{ color: "#fe9119" }}>Technical </span>Skills
       </Heading>

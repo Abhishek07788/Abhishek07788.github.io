@@ -1,19 +1,44 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useState } from "react";
 import Home from "./Home";
-import { SimpleGrid, Box, Heading, Text } from "@chakra-ui/react";
+import { SimpleGrid, Box, Heading, Text, Button } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { useEffect } from "react";
 import About from "./About";
 import Projects from "./Projects";
 import Skills from "./Skills";
 import Contact from "./Contact";
-import { AiOutlineMenu } from "react-icons/ai";
+import { FaRegArrowAltCircleUp } from "react-icons/fa";
+import  Slide from "./Slide";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Main = () => {
   const [checkTheme, setCheckTheme] = useState(false);
   const [theme, setTheme] = useState({});
-  // console.log('theme: ', theme);
+  const projectScroll = useRef(null);
+  const aboutScroll = useRef(null);
+  const skillScroll = useRef(null);
+  const contactScroll = useRef(null);
+
+  // =================== Scrolling =====================>
+  const executeProject = () =>
+    projectScroll.current.scrollIntoView({ behavior: "smooth" });
+
+  const executeAbout = () =>
+    aboutScroll.current.scrollIntoView({ behavior: "smooth" });
+
+  const executeSkill = () =>
+    skillScroll.current.scrollIntoView({ behavior: "smooth" });
+
+  const executeContact = () =>
+    contactScroll.current.scrollIntoView({ behavior: "smooth" });
+
+  // =================== Animation =====================>
+
+  useEffect(() => {
+    AOS.init({ offset: 300, duration: 1000 });
+  }, []);
 
   // =================== Theme 1 =====================>
 
@@ -80,16 +105,27 @@ const Main = () => {
             // border="1px solid red"
             float={"right"}
           >
-            <Text display={["none", "none", "block", "block"]} className="navH">
+            <Text
+              display={["none", "none", "block", "block"]}
+              className="navH"
+              onClick={() =>
+                window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
+              }
+            >
               HOME
             </Text>
-            <Text display={["none", "none", "block", "block"]} className="navH">
+            <Text
+              display={["none", "none", "block", "block"]}
+              className="navH"
+              onClick={executeAbout}
+            >
               ABOUT
             </Text>
             <Text
               display={["none", "none", "block", "block"]}
               w={105}
               className="navH"
+              onClick={executeProject}
             >
               PROJECT
             </Text>
@@ -97,13 +133,21 @@ const Main = () => {
               display={["none", "none", "block", "block"]}
               w={105}
               className="navH"
+              onClick={executeSkill}
             >
               SKILLS
             </Text>
-            <Text display={["none", "none", "block", "block"]} className="navH">
+            <Text
+              display={["none", "none", "block", "block"]}
+              className="navH"
+              onClick={executeContact}
+            >
               CONTACT
             </Text>
-            <a href="https://drive.google.com/file/d/1tCg8poSlmD-uHdvAUT2vjEdVFW_Dd_fe/view?usp=sharing">
+            <a
+              href="https://drive.google.com/file/d/11cBo69VOoq3wcwtPFDMv0t6R7MeHgrB8/view?usp=sharing"
+              target="_blank"
+            >
               <Text
                 display={["none", "none", "block", "block"]}
                 className="navH"
@@ -117,14 +161,15 @@ const Main = () => {
             <Box
               // border={"2px solid #fe9119"}
               borderRadius="10px"
+              mb={-1.5}
               w={["40px", "40px", "40px", "50px"]}
               ml={["350%", "350%", "0%", "0%"]}
               onClick={() => setCheckTheme(!checkTheme)}
             >
               {checkTheme ? (
-                <SunIcon ml={0} fontSize={["29px", "29px", "35px", "35px"]} />
+                <SunIcon ml={0} fontSize={["25px", "26px", "35px", "35px"]} />
               ) : (
-                <MoonIcon ml={0} fontSize={["29px", "29px", "35px", "35px"]} />
+                <MoonIcon ml={0} fontSize={["25px", "26px", "35px", "35px"]} />
               )}
             </Box>
           </SimpleGrid>
@@ -146,17 +191,49 @@ const Main = () => {
           style={theme}
           _hover={{ transform: "scale(1.1)" }}
         >
-          <AiOutlineMenu />
+          <Slide theme={theme} 
+              executeAbout={executeAbout}
+              executeSkill={executeSkill}
+              executeProject={executeProject}  
+              executeContact={executeContact}        
+          />
         </Box>
       </div>
 
+      {/*======================== Up arrow Icon ======================= */}
+      <Button
+        data-aos="zoom-in"
+        onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}
+        position={"fixed"}
+        bottom="0"
+        right="0"
+        mr={[4, 4, "30.6px", 4]}
+        mb={["80px", "80px", "160px", "80px"]}
+        border="2px solid #ff6600"
+        color="#ffff"
+        bg="#ff6600"
+        fontSize={["15px", "18px", "20px", "21px"]}
+        p={[0, 0, "20px", 0]}
+        pt={["15px", "none", "25px", "none"]}
+        pb={["15px", "none", "25px", "none"]}
+        borderRadius="50%"
+        transition="all .4s ease-in-out"
+        _hover={{
+          transform: "scale(1.1)",
+          bg: "#ffff",
+          color: "#ff6600",
+        }}
+      >
+        <FaRegArrowAltCircleUp />
+      </Button>
       {/*======================== ( Components ) ======================= */}
 
+     
       <Home checkTheme={checkTheme} />
-      <About checkTheme={checkTheme} />
-      <Projects checkTheme={checkTheme} />
-      <Skills checkTheme={checkTheme} />
-      <Contact checkTheme={checkTheme} />
+      <About aboutScroll={aboutScroll} checkTheme={checkTheme} />
+      <Projects projectScroll={projectScroll} checkTheme={checkTheme} />
+      <Skills skillScroll={skillScroll} checkTheme={checkTheme} />
+      <Contact contactScroll={contactScroll} checkTheme={checkTheme} />
     </div>
   );
 };

@@ -27,6 +27,7 @@ const Home = (props) => {
   return (
     <div>
       {/* ---------------- Main Div ------------------ */}
+
       <SimpleGrid
         pl={70}
         bg={"#edf2f8"}
