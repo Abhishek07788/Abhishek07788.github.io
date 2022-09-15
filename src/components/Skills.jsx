@@ -79,7 +79,7 @@ const Skills = (props) => {
 
   return (
     <div ref={skillScroll} className="mainDiv" style={theme}>
-      <Heading fontSize={40}>
+      <Heading fontSize={[35,35,40,40]}>
         My <span style={{ color: "#fe9119" }}>Technical </span>Skills
       </Heading>
 

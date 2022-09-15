@@ -8,7 +8,6 @@ import About from "./About";
 import Projects from "./Projects";
 import Skills from "./Skills";
 import Contact from "./Contact";
-import { FaRegArrowAltCircleUp } from "react-icons/fa";
 import  Slide from "./Slide";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -200,32 +199,6 @@ const Main = () => {
         </Box>
       </div>
 
-      {/*======================== Up arrow Icon ======================= */}
-      <Button
-        data-aos="zoom-in"
-        onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}
-        position={"fixed"}
-        bottom="0"
-        right="0"
-        mr={[4, 4, "30.6px", 4]}
-        mb={["80px", "80px", "160px", "80px"]}
-        border="2px solid #ff6600"
-        color="#ffff"
-        bg="#ff6600"
-        fontSize={["15px", "18px", "20px", "21px"]}
-        p={[0, 0, "20px", 0]}
-        pt={["15px", "none", "25px", "none"]}
-        pb={["15px", "none", "25px", "none"]}
-        borderRadius="50%"
-        transition="all .4s ease-in-out"
-        _hover={{
-          transform: "scale(1.1)",
-          bg: "#ffff",
-          color: "#ff6600",
-        }}
-      >
-        <FaRegArrowAltCircleUp />
-      </Button>
       {/*======================== ( Components ) ======================= */}
 
      

@@ -71,28 +71,27 @@ const About = (props) => {
             textAlign={"left"}
             className="AboutList"
           >
-            <ListItem mt={3}>
+            <ListItem mt={14}>
               <ListIcon as={CheckCircleIcon} color="#fe9119" />
               Hello, My name is <b>Abhishek Pratap Solanki </b> and I enjoy
               creating thing that live on the internet.
             </ListItem>
-            <ListItem mt={3}>
+            <ListItem mt={4}>
               <ListIcon as={CheckCircleIcon} color="#fe9119" />
               Quick learner and an aspiring full-stack web developer with core
-              knowledge of MERN stack technology. Looking forward to applying
-              and enhancing my skills and knowledge as a developer.
+              knowledge of MERN stack technology. 
             </ListItem>
-            <ListItem mt={3}>
+            <ListItem mt={4}>
               <ListIcon as={CheckCircleIcon} color="#fe9119" />
               <b>Full Stack Developer </b>with hands on experience in
               building cool React Apps. Works efficiently both in frontend as
               well as backend and is proficient in Data Structure and Algorithms
               with good problem solving skills.
             </ListItem>
-            <ListItem mt={3}>
+            <ListItem mt={4}>
               <ListIcon as={CheckCircleIcon} color="#fe9119" />I built 4 major
               projects. Learned a great deal about teamwork, leadership, and
-              communication. After months of rigorous traning, here I am looking
+              communication. After months of rigorous training, here I am looking
               for an opportunity as a full Stack web Developer.
             </ListItem>
           </List>

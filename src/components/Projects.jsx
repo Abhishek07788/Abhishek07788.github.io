@@ -4,8 +4,9 @@ import { BsGithub } from "react-icons/bs";
 import { HiEye } from "react-icons/hi";
 import { useState } from "react";
 import animotoImg from "../Image/animotoClone.gif";
-import coscheduleImg from "../Image/cosheduleClone.gif"
-import lystImg from "../Image/lystClone.gif"
+import coscheduleImg from "../Image/cosheduleClone.gif";
+import lystImg from "../Image/lystClone.gif";
+import portfolio from "../Image/portfolio.gif";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -13,8 +14,6 @@ const Projects = (props) => {
   const { checkTheme, projectScroll } = props;
   const [theme, setTheme] = useState({});
   const [theme1, setTheme1] = useState({});
-
-
 
   // =================== Animation =====================>
 
@@ -73,12 +72,7 @@ const Projects = (props) => {
         {/* =============== Lyst - Clone Projects ================ */}
 
         <Box data-aos="zoom-in" borderRadius={10} p={4} style={theme1}>
-          <Image
-            w={"100%"}
-            borderRadius={10}
-            src={lystImg}
-            alt="Animoto.com"
-          />
+          <Image w={"100%"} borderRadius={10} src={lystImg} alt="lyst.com" />
           <Heading mt={4} fontSize={"22px"}>
             LYST - Clone{" "}
           </Heading>
@@ -120,7 +114,10 @@ const Projects = (props) => {
             fontSize={["30px", "30px", "36px", "40px"]}
             className="ProjectIcon"
           >
-            <a href="https://github.com/Abhishek07788/impartial-honey-6054/tree/main/lyst.com" target="_blank">
+            <a
+              href="https://github.com/Abhishek07788/impartial-honey-6054/tree/main/lyst.com"
+              target="_blank"
+            >
               <BsGithub className="gitEye" style={{ marginTop: "3" }} />
             </a>
             <a href="https://cute-souffle-8b7dcd.netlify.app/" target="_blank">
@@ -132,14 +129,9 @@ const Projects = (props) => {
         {/* =============== My Portfolio - Clone Projects ================ */}
 
         <Box data-aos="zoom-in" borderRadius={10} p={4} style={theme1}>
-          <Image
-            w={"100%"}
-            borderRadius={10}
-            src={animotoImg}
-            alt="Animoto.com"
-          />
+          <Image w={"100%"} borderRadius={10} src={portfolio} alt="portfolio" />
           <Heading mt={4} fontSize={"22px"}>
-            LYST - Clone{" "}
+            My Portfolio{" "}
           </Heading>
           <Text
             fontSize={["14px", "14px", "19px", "17px"]}
@@ -148,9 +140,9 @@ const Projects = (props) => {
             mt={2}
             textAlign={"left"}
           >
-            This website is a clone of "lyst.com". Lyst is a global fashion
-            search platform, I have cloned it individually, And this project is
-            fully responsive.
+            This is my fully responsive portfolio which I recently made using
+            React & Chakra UI, This website has Dark mode, Scrolling
+            functionality etc.
           </Text>
           <Text
             mt={2}
@@ -167,7 +159,7 @@ const Projects = (props) => {
             <span style={{ color: "#fe9119", fontSize: "16px" }}>
               TECH STACK:{" "}
             </span>
-            REACT | CSS | JAVASCRIPT | JSON SERVER | CHAKRA UI
+            REACT | CSS | JAVASCRIPT | CHAKRA UI
           </Text>
           <Box
             w={"80%"}
@@ -179,10 +171,13 @@ const Projects = (props) => {
             fontSize={["30px", "30px", "36px", "40px"]}
             className="ProjectIcon"
           >
-            <a href="https://github.com/Abhishek07788/impartial-honey-6054/tree/main/lyst.com" target="_blank">
+            <a
+              href="https://github.com/Abhishek07788/Abhishek07788.github.io"
+              target="_blank"
+            >
               <BsGithub className="gitEye" style={{ marginTop: "3" }} />
             </a>
-            <a href="https://cute-souffle-8b7dcd.netlify.app/" target="_blank">
+            <a href="https://abhishek07788.github.io/" target="_blank">
               <HiEye mt={-1.5} className="gitEye" />
             </a>
           </Box>
@@ -208,8 +203,9 @@ const Projects = (props) => {
             textAlign={"left"}
           >
             This website is a clone of "Animoto.com" where user can edit and
-            make new videos in this website there is alot of templates user can
-            choose anyone.
+            make new videos this website has lots of templates to make different
+            videos. In this team project I created navbar, footer part and In
+            the create option. I have made 9 pages.
           </Text>
           <Text
             mt={2}
@@ -238,10 +234,16 @@ const Projects = (props) => {
             fontSize={["30px", "30px", "36px", "40px"]}
             className="ProjectIcon"
           >
-            <a href="https://github.com/rohan209547mourya/deeply-tub-2367" target="_blank">
+            <a
+              href="https://github.com/rohan209547mourya/deeply-tub-2367"
+              target="_blank"
+            >
               <BsGithub className="gitEye" style={{ marginTop: "3" }} />
             </a>
-            <a href="https://bright-sopapillas-48eab1.netlify.app/html/business" target="_blank">
+            <a
+              href="https://bright-sopapillas-48eab1.netlify.app/html/business"
+              target="_blank"
+            >
               <HiEye mt={-1.5} className="gitEye" />
             </a>
           </Box>
@@ -253,7 +255,7 @@ const Projects = (props) => {
             w={"100%"}
             borderRadius={10}
             src={coscheduleImg}
-            alt="Animoto.com"
+            alt="coschedule.com"
           />
           <Heading mt={4} fontSize={"22px"}>
             Coschedule - Clone
@@ -267,7 +269,9 @@ const Projects = (props) => {
           >
             This website is a clone of "coschedule.com", CoSchedule Marketing
             Suite is a family of agile marketing products that helps you
-            coordinate your process, projects, and teams.
+            coordinate your process, projects, and teams. In this team project I
+            created navbar, Home page, footer part and Headline page and Build
+            Your Case For CoSchedule page. 
           </Text>
           <Text
             mt={2}
@@ -284,7 +288,7 @@ const Projects = (props) => {
             <span style={{ color: "#fe9119", fontSize: "16px" }}>
               TECH STACK:{" "}
             </span>
-            HTML | CSS | JAVASCRIPT 
+            HTML | CSS | JAVASCRIPT
           </Text>
           <Box
             w={"80%"}
@@ -296,10 +300,16 @@ const Projects = (props) => {
             fontSize={["30px", "30px", "36px", "40px"]}
             className="ProjectIcon"
           >
-            <a href="https://github.com/Abhishek07788/CoShedule-Website-Project-" target="_blank">
+            <a
+              href="https://github.com/Abhishek07788/CoShedule-Website-Project-"
+              target="_blank"
+            >
               <BsGithub className="gitEye" style={{ marginTop: "3" }} />
             </a>
-            <a href="https://bejewelled-lebkuchen-8a5107.netlify.app/" target="_blank">
+            <a
+              href="https://bejewelled-lebkuchen-8a5107.netlify.app/"
+              target="_blank"
+            >
               <HiEye mt={-1.5} className="gitEye" />
             </a>
           </Box>

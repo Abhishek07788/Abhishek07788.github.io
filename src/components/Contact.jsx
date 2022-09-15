@@ -14,6 +14,7 @@ import { AiFillLinkedin, AiFillGithub, AiOutlineMail } from "react-icons/ai";
 import { FiPhoneCall } from "react-icons/fi";
 import { BsPlusLg } from "react-icons/bs";
 import { ImCross } from "react-icons/im";
+import { FaRegArrowAltCircleUp } from "react-icons/fa";
 import { useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -44,8 +45,8 @@ const Contact = (props) => {
     })
 
     toast({
-      title: "Thanks for contacting me",
-      description: "I will reply soon ",
+      title: "Thanks for contacting me.🙂",
+      description: "I will reply you soon.",
       status: "success",
       duration: 9000,
       isClosable: true,
@@ -379,6 +380,34 @@ const Contact = (props) => {
           </Button>
         </a>
       </Box>
+
+       {/*======================== Up arrow Icon ======================= */}
+       <Button
+        data-aos="zoom-in"
+        onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}
+        position={"fixed"}
+        bottom="0"
+        right="0"
+        zIndex={1000}
+        mr={[4, 4, "30.6px", 4]}
+        mb={["80px", "80px", "160px", "80px"]}
+        border="2px solid #ff6600"
+        color="#ffff"
+        bg="#ff6600"
+        fontSize={["15px", "18px", "20px", "21px"]}
+        p={[0, 0, "20px", 0]}
+        pt={["15px", "none", "25px", "none"]}
+        pb={["15px", "none", "25px", "none"]}
+        borderRadius="50%"
+        transition="all .4s ease-in-out"
+        _hover={{
+          transform: "scale(1.1)",
+          bg: "#ffff",
+          color: "#ff6600",
+        }}
+      >
+        <FaRegArrowAltCircleUp />
+      </Button>
 
       {/* ================== Plus Button ================== */}
       <Button
