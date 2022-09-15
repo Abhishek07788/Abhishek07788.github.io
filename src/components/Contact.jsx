@@ -289,6 +289,8 @@ const Contact = (props) => {
 
       <Box
         position={"fixed"}
+        zIndex={50}
+
         bottom="0"
         right="0"
         mr={[4, 4, 7, 4]}
@@ -388,7 +390,7 @@ const Contact = (props) => {
         position={"fixed"}
         bottom="0"
         right="0"
-        zIndex={1000}
+        zIndex={10}
         mr={[4, 4, "30.6px", 4]}
         mb={["80px", "80px", "160px", "80px"]}
         border="2px solid #ff6600"
@@ -413,6 +415,7 @@ const Contact = (props) => {
       <Button
         onClick={() => setIcon(!icon)}
         position={"fixed"}
+        zIndex={100}
         bottom="0"
         right="0"
         mr={[4, 4, 7, 4]}
