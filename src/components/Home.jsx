@@ -1,12 +1,20 @@
 import React, { useEffect, useState } from "react";
 import myimage from "../Image/profile-pic (1).png";
 import resume from "../Image/Abhishek_Pratrap_Solanki Resume.pdf";
-import { SimpleGrid, Box, Heading, Image, Button } from "@chakra-ui/react";
+import {
+  SimpleGrid,
+  Box,
+  Heading,
+  Image,
+  Button,
+  useToast,
+} from "@chakra-ui/react";
 import { DownloadIcon, ViewIcon } from "@chakra-ui/icons";
 
 const Home = (props) => {
   const { checkTheme } = props;
   const [theme, setTheme] = useState({});
+  const Toast = useToast();
 
   // =================== Theme 1 =====================>
 
@@ -40,18 +48,13 @@ const Home = (props) => {
         pb={"105px"}
         style={theme}
       >
-
-
-      
-    {/*======================== Left side Div ======================= */}
+        {/*======================== Left side Div ======================= */}
 
         <SimpleGrid
           m={["auto", "auto", "auto", "auto"]}
           w={["98%", "98%", "98%", "85%"]}
         >
-
-        
-    {/*======================== Hello heading ======================= */}
+          {/*======================== Hello heading ======================= */}
 
           <Heading
             fontSize={[25, 25, 25, 30]}
@@ -75,8 +78,7 @@ const Home = (props) => {
             , My name is
           </Heading>
 
-          
-    {/*======================== Abhishek Heading ======================= */}
+          {/*======================== Abhishek Heading ======================= */}
 
           <Heading
             mt={[0, 0, 0, 2]}
@@ -86,8 +88,7 @@ const Home = (props) => {
             Abhishek Pratap Solanki
           </Heading>
 
-    
-    {/*======================== Animation Heading ======================= */}
+          {/*======================== Animation Heading ======================= */}
 
           <div className="tagLine">
             <Heading
@@ -100,12 +101,10 @@ const Home = (props) => {
             </Heading>
           </div>
 
-      
-    {/*======================== Resume buttons ======================= */}
+          {/*======================== Resume buttons ======================= */}
 
           <SimpleGrid display={"flex"}>
-            
-    {/*======================== View Resume ======================= */}
+            {/*======================== View Resume ======================= */}
 
             <a href={resume}>
               <Button
@@ -128,11 +127,19 @@ const Home = (props) => {
                 <ViewIcon ml={1} />
               </Button>
             </a>
-            
-    {/*======================== Download Resume ======================= */}
+
+            {/*======================== Download Resume ======================= */}
 
             <a href={resume} download={"Abhishek Pratap Solanki Resume"}>
               <Button
+                 onClick={() =>
+                  Toast({
+                    title: "Downloading...",
+                    status: "success",
+                    duration: 3000,
+                    isClosable: true,
+                  })
+                }
                 border="2px solid #fe9119"
                 ml={3}
                 mt={8}
@@ -154,8 +161,7 @@ const Home = (props) => {
           </SimpleGrid>
         </SimpleGrid>
 
-      
-    {/*======================== My Image (Avatar) ======================= */}
+        {/*======================== My Image (Avatar) ======================= */}
 
         <Box ml={["-26%", "-18%", "1%"]}>
           <Image

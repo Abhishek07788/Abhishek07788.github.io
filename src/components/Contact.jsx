@@ -233,6 +233,7 @@ const Contact = (props) => {
                 size="md"
                 required
                 name="name"
+                maxlength="40" 
               />
               <Input
                 type={"email"}
@@ -246,14 +247,16 @@ const Contact = (props) => {
                 name="email"
               />
               <Input
-                type={"Number"}
+                type={"text"}
                 style={theme1}
                 mt="16px"
-                placeholder="Number"
+                placeholder="Phone"
                 borderBottom={"1px solid grey"}
                 size="md"
                 required
                 name="number"
+                minlength="10"
+                maxlength="10"  
                 // data-aos="fade-down"
               />
               <Textarea
@@ -265,22 +268,9 @@ const Contact = (props) => {
                 rows="5"
                 required
               ></Textarea>
-              <Button
-               style={theme1}
-               fontSize={18}
-               border="2px"
-               color="black"
-               w="100%"
-               textDecoration={"underline"}
-               pt={0}
-               pb={0}
-               transition="all .8s ease-in-out"
-               textAlign="left"
-               _hover={{
-                w:"94%",
-                color:"red"
-               }}
-              type="reset">Reset</Button>
+
+              {/* ===================== Reset button============ */}
+              <Box display={"flex"} gap="3">
               <Input
                 type={"submit"}
                 border="2px solid #fe9119"
@@ -295,8 +285,30 @@ const Contact = (props) => {
                   color: "#ffff",
                   w:"95%"
                 }}
-                //data-aos="zoom-in"
               />
+              <Button
+               style={theme1}
+               fontSize={17}
+               borderBottom="1px"
+               color="black"
+               w="30%"
+               mt={1}
+               textDecoration={"underline"}
+               pt={0}
+               pb={0}
+               transition="all .8s ease-in-out"
+               textAlign="left"
+               _hover={{
+                w:"33%",
+                color:"red"
+               }}
+              type="reset" onClick={()=> toast({
+                title: "Form has been Reset !",
+                status: "success",
+                duration: 1000,
+                isClosable: true,
+              })}>Reset</Button>
+              </Box>
             </form>
           </Box>
         </SimpleGrid>

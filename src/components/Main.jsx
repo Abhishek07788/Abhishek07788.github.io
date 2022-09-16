@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useState } from "react";
 import Home from "./Home";
-import { SimpleGrid, Box, Heading, Text, Button } from "@chakra-ui/react";
+import { SimpleGrid, Box, Heading, Text, Button, useToast } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { useEffect } from "react";
 import About from "./About";
@@ -19,6 +19,28 @@ const Main = () => {
   const aboutScroll = useRef(null);
   const skillScroll = useRef(null);
   const contactScroll = useRef(null);
+  const Toast = useToast();
+
+  const Darkmode = () =>{
+    if(checkTheme){
+      Toast({
+        title: "Light Mode ☀️",
+        status: "success",
+        duration: 2000,
+        isClosable: true,
+      })
+    }
+    else{
+      Toast({
+        title: "Dark Mode 🌑",
+        status: "success",
+        duration: 2000,
+        isClosable: true,
+      })
+    }
+
+    setCheckTheme(!checkTheme)
+  }
 
   // =================== Scrolling =====================>
   const executeProject = () =>
@@ -159,11 +181,16 @@ const Main = () => {
 
             <Box
               // border={"2px solid #fe9119"}
+              onClick={Darkmode}
               borderRadius="10px"
               mb={-1.5}
               w={["40px", "40px", "40px", "50px"]}
               ml={["350%", "350%", "0%", "0%"]}
-              onClick={() => setCheckTheme(!checkTheme)}
+              _hover={
+                {
+                  border:"2px solid #fe9119"
+                }
+              }
             >
               {checkTheme ? (
                 <SunIcon ml={0} fontSize={["25px", "26px", "35px", "35px"]} />
