@@ -265,6 +265,22 @@ const Contact = (props) => {
                 rows="5"
                 required
               ></Textarea>
+              <Button
+               style={theme1}
+               fontSize={18}
+               border="2px"
+               color="black"
+               w="100%"
+               textDecoration={"underline"}
+               pt={0}
+               pb={0}
+               transition="all .8s ease-in-out"
+               textAlign="left"
+               _hover={{
+                w:"94%",
+                color:"red"
+               }}
+              type="reset">Reset</Button>
               <Input
                 type={"submit"}
                 border="2px solid #fe9119"
@@ -277,6 +293,7 @@ const Contact = (props) => {
                 _hover={{
                   bg: "#f04244",
                   color: "#ffff",
+                  w:"95%"
                 }}
                 //data-aos="zoom-in"
               />

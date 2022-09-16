@@ -36,8 +36,8 @@ const Home = (props) => {
         m="auto"
         alignItems={"center"}
         mt={0.5}
-        pt={["65px", "65px", "95px", "65px"]}
-        pb={"65px"}
+        pt={["65px", "65px", "111px", "145px"]}
+        pb={"105px"}
         style={theme}
       >
 
@@ -162,7 +162,7 @@ const Home = (props) => {
             borderRadius={"50%"}
             border={"1px solid #dc3544"}
             m={"auto"}
-            w={[320, 320, 290, 320]}
+            w={[320, 320, 290, 380]}
             transition="all 1s ease-in-out"
             _hover={{
               transform: "scale(1.2)",
