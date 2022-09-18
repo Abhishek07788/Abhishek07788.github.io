@@ -330,7 +330,7 @@ const Projects = (props) => {
           </Box>
         </Box>
       </SimpleGrid>
-      <GitHub />
+      <GitHub theme1={theme1}/>
     </div>
   );
 };
