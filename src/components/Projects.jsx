@@ -9,6 +9,7 @@ import lystImg from "../Image/lystClone.gif";
 import portfolio from "../Image/portfolio.gif";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import GitHub from "./GitHub";
 
 const Projects = (props) => {
   const { checkTheme, projectScroll } = props;
@@ -53,7 +54,7 @@ const Projects = (props) => {
   }, [checkTheme]);
 
   return (
-    <div ref={projectScroll} className="mainDiv" style={theme}>
+    <div ref={projectScroll} className="mainDivProject" style={theme}>
       <Heading fontSize={40}>
         My <span style={{ color: "#fe9119" }}>Projects</span>
       </Heading>
@@ -67,12 +68,18 @@ const Projects = (props) => {
         spacing="40px"
         className="ProjectDiv"
         textAlign={"center"}
-        pb={"100px"}
+        pb={"40px"}
       >
         {/* =============== Lyst - Clone Projects ================ */}
 
         <Box data-aos="zoom-in" borderRadius={10} p={4} style={theme1}>
-          <Image w={"100%"} borderRadius={10} src={lystImg} alt="lyst.com" />
+          <Image
+            border={"2px solid #fe9119"}
+            w={"100%"}
+            borderRadius={10}
+            src={lystImg}
+            alt="lyst.com"
+          />
           <Heading mt={4} fontSize={"22px"}>
             LYST - Clone{" "}
           </Heading>
@@ -129,7 +136,13 @@ const Projects = (props) => {
         {/* =============== My Portfolio - Clone Projects ================ */}
 
         <Box data-aos="zoom-in" borderRadius={10} p={4} style={theme1}>
-          <Image w={"100%"} borderRadius={10} src={portfolio} alt="portfolio" />
+          <Image
+            border={"2px solid #fe9119"}
+            w={"100%"}
+            borderRadius={10}
+            src={portfolio}
+            alt="portfolio"
+          />
           <Heading mt={4} fontSize={"22px"}>
             My Portfolio{" "}
           </Heading>
@@ -187,6 +200,7 @@ const Projects = (props) => {
 
         <Box data-aos="zoom-in" borderRadius={10} p={4} style={theme1}>
           <Image
+            border={"2px solid #fe9119"}
             w={"100%"}
             borderRadius={10}
             src={animotoImg}
@@ -252,6 +266,7 @@ const Projects = (props) => {
         {/* =============== Coschedule - Clone Projects ================ */}
         <Box data-aos="zoom-in" borderRadius={10} p={4} style={theme1}>
           <Image
+            border={"2px solid #fe9119"}
             w={"100%"}
             borderRadius={10}
             src={coscheduleImg}
@@ -271,7 +286,7 @@ const Projects = (props) => {
             Suite is a family of agile marketing products that helps you
             coordinate your process, projects, and teams. In this team project I
             created navbar, Home page, footer part and Headline page and Build
-            Your Case For CoSchedule page. 
+            Your Case For CoSchedule page.
           </Text>
           <Text
             mt={2}
@@ -315,6 +330,7 @@ const Projects = (props) => {
           </Box>
         </Box>
       </SimpleGrid>
+      <GitHub />
     </div>
   );
 };
