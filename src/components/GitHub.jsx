@@ -7,7 +7,7 @@ const GitHub = ({ theme1 }) => {
   return (
     <div>
       <Heading mb={6} mt="8%">
-        My GitHub <span style={{ color: "#fe9119" }}>Calender</span>
+        My GitHub <span style={{ color: "#fe9119" }}>Calendar</span>
       </Heading>
       <Box
         style={theme1}
