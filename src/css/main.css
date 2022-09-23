@@ -142,3 +142,21 @@
 .github_Calender{
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
+
+@media all and (min-width: 0px) and (max-width: 779px) {
+.HomeMain{
+  display: grid;
+  grid-template-areas: 
+  "B"
+  "A"
+  ;
+  gap: 50px;
+}
+.HomeBox1{
+grid-area: A;
+}
+.HomeBox2{
+grid-area: B;
+
+}
+}
