@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useState } from "react";
 import Home from "./Home";
-import { SimpleGrid, Box, Heading, Text, Button, useToast } from "@chakra-ui/react";
+import { SimpleGrid, Box, Heading, Text, useToast } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { useEffect } from "react";
 import About from "./About";
@@ -183,7 +183,7 @@ const Main = () => {
               // border={"2px solid #fe9119"}
               onClick={Darkmode}
               borderRadius="10px"
-              mb={-1.5}
+              mb={-1.7}
               w={["40px", "40px", "40px", "50px"]}
               ml={["350%", "350%", "0%", "0%"]}
               _hover={
@@ -193,15 +193,15 @@ const Main = () => {
               }
             >
               {checkTheme ? (
-                <SunIcon ml={0} fontSize={["25px", "26px", "35px", "35px"]} />
+                <SunIcon ml={0} fontSize={["25px", "26px", "30px", "30px"]} />
               ) : (
-                <MoonIcon ml={0} fontSize={["25px", "26px", "35px", "35px"]} />
+                <MoonIcon ml={0} fontSize={["25px", "26px", "30px", "30px"]} />
               )}
             </Box>
           </SimpleGrid>
         </SimpleGrid>
 
-        {/*======================== More Ontion Icon ======================= */}
+        {/*======================== More Option Icon ======================= */}
         <Box
           position={"absolute"}
           right="0"

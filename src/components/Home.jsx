@@ -10,6 +10,10 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { DownloadIcon, ViewIcon } from "@chakra-ui/icons";
+import { AiFillLinkedin } from "react-icons/ai";
+import { BiPhoneCall } from "react-icons/bi";
+import { BsGithub } from "react-icons/bs";
+import { MdEmail } from "react-icons/md";
 
 const Home = (props) => {
   const { checkTheme } = props;
@@ -116,11 +120,11 @@ const Home = (props) => {
                 fontSize={["14px", "14px", "18px"]}
                 w={["90px", "90px", "120px"]}
                 mb={"40px"}
-                transition="all .4s ease-in-out"
+                transition="all .3s ease-in-out"
                 _hover={{
                   color: "#fe9119",
                   bg: "white",
-                  transform: "scale(1.1)",
+                  transform: "scale(1.15)",
                 }}
               >
                 Resume
@@ -132,7 +136,7 @@ const Home = (props) => {
 
             <a href={resume} download={"Abhishek Pratap Solanki Resume"}>
               <Button
-                 onClick={() =>
+                onClick={() =>
                   Toast({
                     title: "Downloading...",
                     status: "success",
@@ -148,17 +152,109 @@ const Home = (props) => {
                 fontSize={["18px", "18px", "18px"]}
                 w={["30px", "30px", "40px"]}
                 fontWeight={600}
-                transition="all .4s ease-in-out"
+                transition="all .3s ease-in-out"
                 _hover={{
                   color: "#fe9119",
                   bg: "white",
-                  transform: "scale(1.1)",
+                  transform: "scale(1.15)",
                 }}
               >
                 <DownloadIcon />
               </Button>
             </a>
           </SimpleGrid>
+        
+            {/*======================== Social Media Icons ======================= */}      
+          <Box
+            bottom="0"
+            right="0"
+            display={"flex"}
+            w={"60%"}
+            ml={[0, 0, 0, 50]}
+            mt={-3}
+            gap={2}
+            pb={["80px", "80px", "80px", "80px"]}
+          >
+            <a
+              href="http://www.linkedin.com/in/abhishekpratapsolanki"
+              target="_blank"
+            >
+              <Button
+                color="#00000"
+                border={"1px"}
+                bg="#fe9119"
+                fontSize={["16px", "17px", "23px", "23px"]}
+                p={[0, 0, 2, 2]}
+                borderRadius="50%"
+                transition="all .3s ease-in-out"
+                _hover={{
+                  border: "2px solid #0a66c2",
+                  transform: "scale(1.2)",
+                  bg: "#ffff",
+                  color: "#0a66c2",
+                }}
+              >
+                <AiFillLinkedin />
+              </Button>
+            </a>
+            <a href="https://github.com/Abhishek07788" target="_blank">
+              <Button
+                color="#00000"
+                border={"1px"}
+                bg="#fe9119"
+                fontSize={["16px", "17px", "23px", "23px"]}
+                p={[0, 0, 2, 2]}
+                borderRadius="50%"
+                transition="all .3s ease-in-out"
+                _hover={{
+                  transform: "scale(1.2)",
+                  border: "2px solid #3f3d55",
+                  bg: "#ffff",
+                  color: "#3f3d55",
+                }}
+              >
+                <BsGithub />
+              </Button>
+            </a>
+            <a href="mailto:abhisheksolanki1020@gmail.com">
+              <Button
+                color="#00000"
+                border={"1px"}
+                bg="#fe9119"
+                fontSize={["16px", "17px", "23px", "23px"]}
+                p={[0, 0, 2, 2]}
+                borderRadius="50%"
+                transition="all .3s ease-in-out"
+                _hover={{
+                  transform: "scale(1.2)",
+                  bg: "#ffff",
+                  border: "2px solid #f04244",
+                  color: "#f04244",
+                }}
+              >
+                <MdEmail />
+              </Button>
+            </a>
+            <a href="tel:+919758207006">
+              <Button
+                color="#00000"
+                border={"1px"}
+                bg="#fe9119"
+                borderRadius={"50%"}
+                fontSize={["16px", "17px", "23px", "23px"]}
+                p={[0, 0, 2, 2]}
+                transition="all .3s ease-in-out"
+                _hover={{
+                  transform: "scale(1.2)",
+                  bg: "#ffff",
+                  border: "2px solid #4db946",
+                  color: "#4db946",
+                }}
+              >
+                <BiPhoneCall />
+              </Button>
+            </a>
+          </Box>
         </SimpleGrid>
 
         {/*======================== My Image (Avatar) ======================= */}

@@ -33,25 +33,32 @@ const Contact = (props) => {
   //------------------------ Email Send --------------
   const sendEmail = (e) => {
     e.preventDefault();
-    emailjs.sendForm(
-      "service_ml5brp5",
-      "template_xe5tl5l",
-      e.target,
-      "_-SYa4AW4mbtbVQiF"
-    ).then(res=>{
-      console.log(res)
-    }).catch((err)=>{
-      console.log(err)
-    })
-
+    // emailjs.sendForm(
+    //   "service_ml5brp5",
+    //   "template_xe5tl5l",
+    //   e.target,
+    //   "_-SYa4AW4mbtbVQiF"
+    // ).then(res=>{
+    //   console.log(res)
+    // }).catch((err)=>{
+    //   console.log(err)
+    // })
+    // toast({
+    //   title: "Thanks for contacting me.🙂",
+    //   description: "I will reply you soon.",
+    //   status: "success",
+    //   duration: 9000,
+    //   isClosable: true,
+    // });
     toast({
-      title: "Thanks for contacting me.🙂",
-      description: "I will reply you soon.",
-      status: "success",
+      title: "This service has been stop from backend!",
+      description: "Because of some students spam, It will be stated soon.🙂",
+      status: "error",
       duration: 9000,
       isClosable: true,
     });
   };
+
 
   // =================== Animation =====================>
 
