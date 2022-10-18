@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.bde96fbb.css",
-    "main.js": "/static/js/main.ef12eee0.js",
+    "main.js": "/static/js/main.cff4be10.js",
     "static/js/787.128fc6e9.chunk.js": "/static/js/787.128fc6e9.chunk.js",
     "static/media/Bitrix24.gif": "/static/media/Bitrix24.e599e1282eeb7f31a63d.gif",
     "static/media/animotoClone.gif": "/static/media/animotoClone.00fd7884adbb39bfda54.gif",
@@ -10,7 +10,7 @@
     "static/media/cosheduleClone.gif": "/static/media/cosheduleClone.d79edea24b18ca7055af.gif",
     "static/media/profile-pic (1).png": "/static/media/profile-pic (1).d9a1ff55c37283b7c912.png",
     "static/media/emailimg.png": "/static/media/emailimg.3c0f564e00c7456623d9.png",
-    "static/media/Abhishek_Pratrap_Solanki Resume.pdf": "/static/media/Abhishek_Pratrap_Solanki Resume.de1cf237436ad3964fbc.pdf",
+    "static/media/Abhishek_Pratrap_Solanki Resume.pdf": "/static/media/Abhishek_Pratrap_Solanki Resume.e0020faa439f0e68001f.pdf",
     "static/media/chakraui.png": "/static/media/chakraui.15320604467d004df871.png",
     "static/media/mongoose.png": "/static/media/mongoose.51275a001caf5e6e30d4.png",
     "static/media/mongodb.svg": "/static/media/mongodb.6835c61a518a732eb8318d43dfe8f700.svg",
@@ -27,11 +27,11 @@
     "static/media/materialui.svg": "/static/media/materialui.87264df237ee700ba78bb58ff701a6d3.svg",
     "static/media/npm.svg": "/static/media/npm.87689eab730642c86d2b01f3ef4a19e3.svg",
     "main.bde96fbb.css.map": "/static/css/main.bde96fbb.css.map",
-    "main.ef12eee0.js.map": "/static/js/main.ef12eee0.js.map",
+    "main.cff4be10.js.map": "/static/js/main.cff4be10.js.map",
     "787.128fc6e9.chunk.js.map": "/static/js/787.128fc6e9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bde96fbb.css",
-    "static/js/main.ef12eee0.js"
+    "static/js/main.cff4be10.js"
   ]
 }
