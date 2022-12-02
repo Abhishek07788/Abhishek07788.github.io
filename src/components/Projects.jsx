@@ -1,12 +1,22 @@
-import { SimpleGrid, Box, Heading, Text, Image } from "@chakra-ui/react";
-import React, { useEffect, useRef } from "react";
+import {
+  SimpleGrid,
+  Box,
+  Heading,
+  Text,
+  Image,
+  useToast,
+} from "@chakra-ui/react";
+import React, { useEffect } from "react";
 import { BsGithub } from "react-icons/bs";
+import { RiVideoFill } from "react-icons/ri";
 import { HiEye } from "react-icons/hi";
 import { useState } from "react";
 import animotoImg from "../Image/animotoClone.gif";
 import coscheduleImg from "../Image/cosheduleClone.gif";
 import lystImg from "../Image/lystClone.gif";
 import portfolio from "../Image/portfolio.gif";
+import Bitrix24 from "../Image/Bitrix24.gif";
+import BeautyHub from "../Image/BeautyHub.gif";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import GitHub from "./GitHub";
@@ -15,6 +25,7 @@ const Projects = (props) => {
   const { checkTheme, projectScroll } = props;
   const [theme, setTheme] = useState({});
   const [theme1, setTheme1] = useState({});
+  const toast = useToast();
 
   // =================== Animation =====================>
 
@@ -70,6 +81,163 @@ const Projects = (props) => {
         textAlign={"center"}
         pb={"40px"}
       >
+        {/* =============== BeautyHub Projects ================ */}
+
+        <Box data-aos="zoom-in" borderRadius={10} p={4} style={theme1}>
+          <Image
+            border={"2px solid #fe9119"}
+            w={"100%"}
+            borderRadius={10}
+            src={BeautyHub}
+            alt="BeautyHub.in"
+          />
+          <Heading mt={4} fontSize={"22px"}>
+            BeautyHub
+          </Heading>
+          <Text
+            fontSize={["14px", "14px", "19px", "17px"]}
+            lineHeight={"21px"}
+            w="99%"
+            mt={2}
+            textAlign={"left"}
+          >
+            BeautyHub is an online retailer that sells premium beauty,clinical
+            skincare,and luxury spa products. On this website, I have built
+            Navbar. Signup, and login, I also handled the entire backend for
+            signup and log-in by using JWT.
+          </Text>
+          <Text
+            mt={2}
+            textAlign={"left"}
+            fontSize={["14px", "14px", "19px", "17px"]}
+          >
+            <b> Group Project: </b> 5 Collaborators | <b>Duration: </b> 05 Days
+          </Text>
+          <Text
+            mt={2}
+            textAlign={"left"}
+            fontSize={["13px", "13px", "16px", "15px"]}
+          >
+            <span style={{ color: "#fe9119", fontSize: "16px" }}>
+              TECH STACK:{" "}
+            </span>
+            ReactJS | CSS | JavaScript | Chakra UI | NODEJS | EXPRESS | MONGODB
+            | JWT
+          </Text>
+          <Box
+            w={"80%"}
+            m={"auto"}
+            mt={3}
+            justifyItems={"center"}
+            display={"flex"}
+            justifyContent="space-between"
+            fontSize={["30px", "30px", "36px", "40px"]}
+            className="ProjectIcon"
+          >
+            <a
+              href="https://github.com/Sagarsandbhor17/Beautyhub"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <BsGithub className="gitEye" style={{ marginTop: "3" }} />
+            </a>
+            <a
+              href="https://drive.google.com/file/d/1f1TdXvjqz58Ndki73CsjqVV0vgNA8SQT/view?usp=sharing"
+              target="_blank"
+              title="Video (Google Drive)"
+              rel="noreferrer"
+            >
+              <RiVideoFill mt={-1.5} className="gitEye" />
+            </a>
+            <a
+              href="https://beautyhubproject.netlify.app/"
+              target="_blank"
+              title="Netlify"
+              rel="noreferrer"
+            >
+              <HiEye mt={-1.5} className="gitEye" />
+            </a>
+          </Box>
+        </Box>
+
+        {/* =============== Bitrix24 - Clone Projects ================ */}
+
+        <Box data-aos="zoom-in" borderRadius={10} p={4} style={theme1}>
+          <Image
+            border={"2px solid #fe9119"}
+            w={"100%"}
+            borderRadius={10}
+            src={Bitrix24}
+            alt="Bitrix24.in"
+          />
+          <Heading mt={4} fontSize={"22px"}>
+            Bitrix24 - Clone{" "}
+          </Heading>
+          <Text
+            fontSize={["14px", "14px", "19px", "17px"]}
+            lineHeight={"21px"}
+            w="99%"
+            mt={2}
+            textAlign={"left"}
+          >
+            This is a clone of Bitrix24 website. From Homepage, Login&SignUp to
+            Feeds-Update, Tasks Adding-Deleting-Changing Status, Calendar
+            Todo-Adding-Deleting. We have cloned every functionalities. In this
+            project my part was "FEED" Page.
+          </Text>
+          <Text
+            mt={2}
+            textAlign={"left"}
+            fontSize={["14px", "14px", "19px", "17px"]}
+          >
+            <b> Group Project: </b> 5 Collaborators | <b>Duration: </b> 05 Days
+          </Text>
+          <Text
+            mt={2}
+            textAlign={"left"}
+            fontSize={["13px", "13px", "16px", "15px"]}
+          >
+            <span style={{ color: "#fe9119", fontSize: "16px" }}>
+              TECH STACK:{" "}
+            </span>
+            ReactJS | CSS | JavaScript | Chakra UI | NODEJS | EXPRESS | MONGODB
+          </Text>
+          <Box
+            w={"80%"}
+            m={"auto"}
+            mt={3}
+            justifyItems={"center"}
+            display={"flex"}
+            justifyContent="space-between"
+            fontSize={["30px", "30px", "36px", "40px"]}
+            className="ProjectIcon"
+          >
+            <a
+              href="https://github.com/amitchouhan948/possible-temper-2642"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <BsGithub className="gitEye" style={{ marginTop: "3" }} />
+            </a>
+            <a
+              href="https://drive.google.com/file/d/1GM3cAQ-ztVqKW6MdbhrCQJoL_Sv9h7dN/view?usp=sharing"
+              target="_blank"
+              title="Video (Google Drive)"
+              rel="noreferrer"
+            >
+              <RiVideoFill mt={-1.5} className="gitEye" />
+            </a>
+            <a
+              href="https://bitrix24in.netlify.app/"
+              target="_blank"
+              title="Netlify"
+              rel="noreferrer"
+            >
+              <HiEye mt={-1.5} className="gitEye" />
+            </a>
+          </Box>
+        </Box>
+
         {/* =============== Lyst - Clone Projects ================ */}
 
         <Box data-aos="zoom-in" borderRadius={10} p={4} style={theme1}>
@@ -109,12 +277,12 @@ const Projects = (props) => {
             <span style={{ color: "#fe9119", fontSize: "16px" }}>
               TECH STACK:{" "}
             </span>
-            REACT | CSS | JAVASCRIPT | JSON SERVER | CHAKRA UI
+            ReactJS | CSS | JavaScript | Json Server | Chakra UI
           </Text>
           <Box
             w={"80%"}
             m={"auto"}
-            mt={3}
+            mt={[3, 3, 3, 10]}
             justifyItems={"center"}
             display={"flex"}
             justifyContent="space-between"
@@ -124,10 +292,24 @@ const Projects = (props) => {
             <a
               href="https://github.com/Abhishek07788/impartial-honey-6054/tree/main/lyst.com"
               target="_blank"
+              rel="noreferrer"
             >
               <BsGithub className="gitEye" style={{ marginTop: "3" }} />
             </a>
-            <a href="https://cute-souffle-8b7dcd.netlify.app/" target="_blank">
+            <a
+              href="https://www.linkedin.com/posts/abhishekpratapsolanki_project-lyst-react-activity-6970317062455848960-TnLX?utm_source=share&utm_medium=member_desktop"
+              target="_blank"
+              title="Video (LinkDin)"
+              rel="noreferrer"
+            >
+              <RiVideoFill mt={-1.5} className="gitEye" />
+            </a>
+            <a
+              href="https://cute-souffle-8b7dcd.netlify.app/"
+              target="_blank"
+              title="Netlify"
+              rel="noreferrer"
+            >
               <HiEye mt={-1.5} className="gitEye" />
             </a>
           </Box>
@@ -172,12 +354,12 @@ const Projects = (props) => {
             <span style={{ color: "#fe9119", fontSize: "16px" }}>
               TECH STACK:{" "}
             </span>
-            REACT | CSS | JAVASCRIPT | CHAKRA UI
+            ReactJS | CSS | JavaScript | Chakra UI
           </Text>
           <Box
             w={"80%"}
             m={"auto"}
-            mt={3}
+            mt={[3, 3, 3, 14]}
             justifyItems={"center"}
             display={"flex"}
             justifyContent="space-between"
@@ -185,12 +367,37 @@ const Projects = (props) => {
             className="ProjectIcon"
           >
             <a
-              href="https://github.com/Abhishek07788/Abhishek07788.github.io"
+              href="https://github.com/Abhishek07788/My-Portfolio"
               target="_blank"
+              rel="noreferrer"
+              onClick={() =>
+                toast({
+                  title: "This repository is private for some reasons.🙂!",
+                  status: "info",
+                  duration: 9000,
+                  isClosable: true,
+                })
+              }
             >
-              <BsGithub className="gitEye" style={{ marginTop: "3" }} />
+              <BsGithub
+                title="This is a private repository to protect the code !"
+                className="gitEye"
+                style={{ marginTop: "3" }}
+              />
             </a>
-            <a href="https://abhishek07788.github.io/" target="_blank">
+            <a
+              href="https://drive.google.com/file/d/1QwJVeoJ4oPI1SZcC60JrgzbNMwmPBnjC/view?usp=sharing"
+              target="_blank"
+              title="Video (Google Drive)"
+              rel="noreferrer"
+            >
+              <RiVideoFill mt={-1.5} className="gitEye" />
+            </a>
+            <a
+              href="https://abhishek07788.github.io/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <HiEye mt={-1.5} className="gitEye" />
             </a>
           </Box>
@@ -219,7 +426,7 @@ const Projects = (props) => {
             This website is a clone of "Animoto.com" where user can edit and
             make new videos this website has lots of templates to make different
             videos. In this team project I created navbar, footer part and In
-            the create option. I have made 9 pages.
+            the create option, I have build 9 pages.
           </Text>
           <Text
             mt={2}
@@ -236,12 +443,12 @@ const Projects = (props) => {
             <span style={{ color: "#fe9119", fontSize: "16px" }}>
               TECH STACK:{" "}
             </span>
-            HTML | CSS | JAVASCRIPT | JSON SERVER
+            HTML | CSS | JavaScript | Json Server
           </Text>
           <Box
             w={"80%"}
             m={"auto"}
-            mt={3}
+            mt={[3, 3, 3, 9]}
             justifyItems={"center"}
             display={"flex"}
             justifyContent="space-between"
@@ -251,12 +458,23 @@ const Projects = (props) => {
             <a
               href="https://github.com/rohan209547mourya/deeply-tub-2367"
               target="_blank"
+              rel="noreferrer"
             >
               <BsGithub className="gitEye" style={{ marginTop: "3" }} />
             </a>
             <a
-              href="https://bright-sopapillas-48eab1.netlify.app/html/business"
+              href="https://drive.google.com/file/d/1NBMMAl62B0tKTbssrkckqv4ycGUz5bmx/view?usp=sharing"
               target="_blank"
+              title="Video (Google Drive)"
+              rel="noreferrer"
+            >
+              <RiVideoFill mt={-1.5} className="gitEye" />
+            </a>
+            <a
+              href="https://bright-sopapillas-48eab1.netlify.app/html/business"
+              title="Netlify"
+              target="_blank"
+              rel="noreferrer"
             >
               <HiEye mt={-1.5} className="gitEye" />
             </a>
@@ -303,7 +521,7 @@ const Projects = (props) => {
             <span style={{ color: "#fe9119", fontSize: "16px" }}>
               TECH STACK:{" "}
             </span>
-            HTML | CSS | JAVASCRIPT
+            HTML | CSS | JavaScript
           </Text>
           <Box
             w={"80%"}
@@ -318,19 +536,29 @@ const Projects = (props) => {
             <a
               href="https://github.com/Abhishek07788/CoShedule-Website-Project-"
               target="_blank"
+              rel="noreferrer"
             >
               <BsGithub className="gitEye" style={{ marginTop: "3" }} />
             </a>
             <a
+              href="https://drive.google.com/file/d/1aZrzo1eFi9F2us2oqO7jp4QnQj7jfcB-/view?usp=sharing"
+              target="_blank"
+              title="Video (Google Drive)"
+              rel="noreferrer"
+            >
+              <RiVideoFill mt={-1.5} className="gitEye" />
+            </a>
+            <a
               href="https://bejewelled-lebkuchen-8a5107.netlify.app/"
               target="_blank"
+              title="Netlify"
+              rel="noreferrer"
             >
               <HiEye mt={-1.5} className="gitEye" />
             </a>
           </Box>
         </Box>
       </SimpleGrid>
-      <GitHub theme1={theme1}/>
     </div>
   );
 };

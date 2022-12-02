@@ -48,12 +48,12 @@ const Skills = (props) => {
 
   useEffect(() => {
     if (checkTheme) {
-      setTheme({
+      setTheme1({
         color: "white",
         backgroundColor: "#1a202c",
       });
     } else {
-      setTheme({
+      setTheme1({
         color: "black",
         backgroundColor: "#ffffff",
       });
@@ -65,12 +65,12 @@ const Skills = (props) => {
 
   useEffect(() => {
     if (checkTheme) {
-      setTheme1({
+      setTheme({
         color: "white",
         backgroundColor: "#0f1624",
       });
     } else {
-      setTheme1({
+      setTheme({
         color: "black",
         backgroundColor: "#edf2f8",
       });

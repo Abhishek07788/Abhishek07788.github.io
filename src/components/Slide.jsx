@@ -11,8 +11,14 @@ import {
 import { AiOutlineMenu } from "react-icons/ai";
 import { useRef } from "react";
 const Slide = (props) => {
-  const { executeSkill, executeAbout, executeContact, executeProject, theme } =
-    props;
+  const {
+    executeSkill,
+    executeAbout,
+    executeContact,
+    executeProject,
+    executeGithub,
+    theme,
+  } = props;
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
 
@@ -29,6 +35,11 @@ const Slide = (props) => {
   const projectfunc = () => {
     onClose();
     executeProject();
+  };
+
+  const githubfunc = () => {
+    onClose();
+    executeGithub();
   };
 
   const skillfunc = () => {
@@ -85,6 +96,15 @@ const Slide = (props) => {
                   onClick={projectfunc}
                 >
                   PROJECTS
+                </Text>
+                <Text
+                  p="1"
+                  fontSize={15}
+                  borderRadius={5}
+                  _hover={{ bg: "#fe9119", color: "#ffff" }}
+                  onClick={githubfunc}
+                >
+                  GITHUB
                 </Text>
                 <Text
                   p="1"

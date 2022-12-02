@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import myimage from "../Image/profile-pic (1).png";
-import resume from "../Image/Abhishek_Pratrap_Solanki Resume.pdf";
+import resume from "../Image/Abhishek-Pratap-Solanki-Resume.pdf";
 import {
   SimpleGrid,
   Box,
@@ -47,15 +47,16 @@ const Home = (props) => {
         columns={[1, 1, 2, 2]}
         m="auto"
         alignItems={"center"}
-        mt={[-6, -5, 0.5, 0]}
-        pt={["65px", "65px", "111px", "145px"]}
-        pb={"105px"}
+        mt={[-6, -6, -6, -6]}
+        pt={["70px", "65px", "141px", "145px"]}
+        pb={["105px","105px","155px","145px"]}
         className="HomeMain"
         style={theme}
       >
         {/*======================== Left side Div ======================= */}
 
-        <SimpleGrid className="HomeBox1" 
+        <SimpleGrid
+          className="HomeBox1"
           m={["auto", "auto", "auto", "auto"]}
           w={["98%", "98%", "98%", "85%"]}
         >
@@ -201,7 +202,7 @@ const Home = (props) => {
 
           {/*======================== Resume buttons ======================= */}
 
-          <SimpleGrid display={"flex"}  mt={["-16","-16","-65","-65"]}>
+          <SimpleGrid display={"flex"} mt={["-16", "-16", "-65", "-65"]}>
             {/*======================== View Resume ======================= */}
 
             <a href={resume}>
@@ -227,7 +228,7 @@ const Home = (props) => {
 
             {/*======================== Download Resume ======================= */}
 
-            <a href={resume} download={"Abhishek Pratap Solanki Resume"}>
+            <a href={resume} download={"Abhishek-Pratap-Solanki-Resume"}>
               <Button
                 onClick={() =>
                   Toast({
@@ -259,20 +260,30 @@ const Home = (props) => {
 
         {/*======================== My Image (Avatar) ======================= */}
 
-        <Box className="HomeBox2" ml={["-25%", "-18%", "1%"]}> 
-          <Image
-            borderRadius={"50%"}
-            border={"1px solid #dc3544"}
-            mt="-3"
+        <Box className="HomeBox2" ml={["-25%", "-18%", "1%"]} mb="6">
+          <Box
+            className="HomeYellowBg"
             m={"auto"}
-            w={[320, 320, 290, 380]}
-            transition="all 1s ease-in-out"
+            w={["80%", "60%", "85%", "68%"]}
+            transition="all 2s ease-in-out"
+            transform="scale(1)"
             _hover={{
-              transform: "scale(1.2)",
+              transform: "scale(1.1)",
             }}
-            src={myimage}
-            alt="Avatar"
-          />
+          >
+            <Image
+              borderRadius={"50%"}
+              mt="-3"
+              m={"auto"}
+              w={[290, 300, 290, 380]}
+              transition="all 1s ease-in-out"
+              _hover={{
+                transform: "scale(1.2)",
+              }}
+              src={myimage}
+              alt="Avatar"
+            />
+          </Box>
         </Box>
       </SimpleGrid>
     </div>

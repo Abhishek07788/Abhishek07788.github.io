@@ -5,12 +5,23 @@
    
 .navH{
     width: 80%;
+    font-size: 17px;
 }
 .navH:hover{
-    background-color: #fe9119;
-    color: white;
-    border-radius: 10px;
+    color: #ff6600;
+    text-decoration: underline;
     padding: 5px 0px 5px 0px;
+    transition:all .2s ease-in-out;
+    transform: scale(1.2);
+}
+
+
+
+.Nab{
+  position: sticky;
+  top:0;
+  left: 0;
+  z-index: 1000;
 }
 
 .tagLine {
@@ -159,4 +170,22 @@ grid-area: A;
 grid-area: B;
 
 }
+}
+
+
+.HomeYellowBg{
+  background-image: url('../Image/yellowBrushImg.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+/* 
+.githubDiv{
+  margin-bottom: 10%;
+} */
+
+#Message{
+  border: 1px solid #ffff;
+  border-radius: 10px;
+  padding: 10px;
 }

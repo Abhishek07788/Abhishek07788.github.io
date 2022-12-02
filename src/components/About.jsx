@@ -84,7 +84,7 @@ const About = (props) => {
             <ListItem mt={4}>
               <ListIcon as={CheckCircleIcon} color="#fe9119" />
               <b>Full Stack Developer </b>with hands on experience in
-              building cool React Apps. Works efficiently both in frontend as
+              building React Apps. Works efficiently both in frontend as
               well as backend and is proficient in Data Structure and Algorithms
               with good problem solving skills.
             </ListItem>

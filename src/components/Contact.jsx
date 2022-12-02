@@ -26,39 +26,37 @@ const Contact = (props) => {
   const [theme, setTheme] = useState({});
   const [theme1, setTheme1] = useState({});
   const [icon, setIcon] = useState(false);
-  const [show, setShow] = useState({});
   const toast = useToast();
-
 
   //------------------------ Email Send --------------
   const sendEmail = (e) => {
     e.preventDefault();
-    // emailjs.sendForm(
-    //   "service_ml5brp5",
-    //   "template_xe5tl5l",
-    //   e.target,
-    //   "_-SYa4AW4mbtbVQiF"
-    // ).then(res=>{
-    //   console.log(res)
-    // }).catch((err)=>{
-    //   console.log(err)
-    // })
-    // toast({
-    //   title: "Thanks for contacting me.🙂",
-    //   description: "I will reply you soon.",
-    //   status: "success",
-    //   duration: 9000,
-    //   isClosable: true,
-    // });
+    emailjs.sendForm(
+      "service_ml5brp5",
+      "template_xe5tl5l",
+      e.target,
+      "_-SYa4AW4mbtbVQiF"
+    ).then(res=>{
+      console.log(res)
+    }).catch((err)=>{
+      console.log(err)
+    })
     toast({
-      title: "This service has been stop from backend!",
-      description: "Because of some students spam, It will be stated soon.🙂",
-      status: "error",
+      title: "Thanks for contacting me.🙂",
+      description: "I will reply you soon.",
+      status: "success",
       duration: 9000,
       isClosable: true,
     });
+    // toast({
+    //   title: "This service has been stop from backend!",
+    //   description: "Because of some students spam, It will be stated soon.🙂",
+    //   status: "error",
+    //   duration: 9000,
+    //   isClosable: true,
+    // });
+    e.target.reset()
   };
-
 
   // =================== Animation =====================>
 
@@ -66,26 +64,16 @@ const Contact = (props) => {
     AOS.init({ offset: 300, duration: 1000 });
   }, []);
 
-  // ========= Right side Icon condition ===============>
-
-  useEffect(() => {
-    if (icon) {
-      setShow({ display: "grid" });
-    } else {
-      setShow({ display: "none" });
-    }
-  }, [icon]);
-
   // =================== Theme 1 =====================>
 
   useEffect(() => {
     if (checkTheme) {
-      setTheme({
+      setTheme1({
         color: "white",
         backgroundColor: "#0f1624",
       });
     } else {
-      setTheme({
+      setTheme1({
         color: "black",
         backgroundColor: "#edf2f8",
       });
@@ -96,12 +84,12 @@ const Contact = (props) => {
 
   useEffect(() => {
     if (checkTheme) {
-      setTheme1({
+      setTheme({
         color: "white",
         backgroundColor: "#1a202c",
       });
     } else {
-      setTheme1({
+      setTheme({
         color: "black",
         backgroundColor: "#ffffff",
       });
@@ -229,7 +217,7 @@ const Contact = (props) => {
               style={theme}
               textAlign="left"
             >
-              Send me <span style={{ color: "#fe9119" }}>Message.</span>
+              Get In <span style={{ color: "#fe9119" }}>Touch.</span>
             </Heading>
             <form onSubmit={sendEmail}>
               <Input
@@ -240,7 +228,7 @@ const Contact = (props) => {
                 size="md"
                 required
                 name="name"
-                maxlength="40" 
+                maxLength="100"
               />
               <Input
                 type={"email"}
@@ -262,59 +250,64 @@ const Contact = (props) => {
                 size="md"
                 required
                 name="number"
-                minlength="10"
-                maxlength="10"  
+                minLength="10"
+                maxLength="10"
                 // data-aos="fade-down"
               />
-              <Textarea
+              <textarea
                 style={theme1}
                 id="Message"
                 placeholder="Your Message"
-                className="form-control"
                 name="message"
                 rows="5"
                 required
-              ></Textarea>
+              />
 
               {/* ===================== Reset button============ */}
               <Box display={"flex"} gap="3">
-              <Input
-                type={"submit"}
-                border="2px solid #fe9119"
-                fontSize={18}
-                mt={1}
-                color="black"
-                bg="#fe9119"
-                w="100%"
-                transition="all .4s ease-in-out"
-                _hover={{
-                  bg: "#f04244",
-                  color: "#ffff",
-                  w:"95%"
-                }}
-              />
-              <Button
-               style={theme1}
-               fontSize={17}
-               borderBottom="1px"
-               color="black"
-               w="30%"
-               mt={1}
-               textDecoration={"underline"}
-               pt={0}
-               pb={0}
-               transition="all .8s ease-in-out"
-               textAlign="left"
-               _hover={{
-                w:"33%",
-                color:"red"
-               }}
-              type="reset" onClick={()=> toast({
-                title: "Form has been Reset !",
-                status: "success",
-                duration: 1000,
-                isClosable: true,
-              })}>Reset</Button>
+                <Input
+                  type={"submit"}
+                  border="2px solid #fe9119"
+                  fontSize={18}
+                  mt={1}
+                  color="black"
+                  bg="#fe9119"
+                  w="100%"
+                  transition="all .4s ease-in-out"
+                  _hover={{
+                    bg: "#f04244",
+                    color: "#ffff",
+                    w: "95%",
+                  }}
+                />
+                <Button
+                  style={theme1}
+                  fontSize={17}
+                  borderBottom="1px"
+                  color="black"
+                  w="30%"
+                  mt={1}
+                  textDecoration={"underline"}
+                  pt={0}
+                  pb={0}
+                  transition="all .8s ease-in-out"
+                  textAlign="left"
+                  _hover={{
+                    w: "33%",
+                    color: "red",
+                  }}
+                  type="reset"
+                  onClick={() =>
+                    toast({
+                      title: "Form has been Cleared !",
+                      status: "success",
+                      duration: 1000,
+                      isClosable: true,
+                    })
+                  }
+                >
+                  Clear
+                </Button>
               </Box>
             </form>
           </Box>
@@ -326,13 +319,12 @@ const Contact = (props) => {
       <Box
         position={"fixed"}
         zIndex={50}
-
         bottom="0"
         right="0"
         mr={[4, 4, 7, 4]}
         gap={3}
         pb={["80px", "80px", "160px", "80px"]}
-        style={show}
+        display={icon ? "grid" : "none"}
       >
         <a
           href="http://www.linkedin.com/in/abhishekpratapsolanki"
@@ -419,8 +411,8 @@ const Contact = (props) => {
         </a>
       </Box>
 
-       {/*======================== Up arrow Icon ======================= */}
-       <Button
+      {/*======================== Up arrow Icon ======================= */}
+      <Button
         data-aos="zoom-in"
         onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}
         position={"fixed"}
@@ -444,7 +436,7 @@ const Contact = (props) => {
           color: "#ff6600",
         }}
       >
-        <FaRegArrowAltCircleUp />
+        <FaRegArrowAltCircleUp title="Go to Top"/>
       </Button>
 
       {/* ================== Plus Button ================== */}
@@ -471,11 +463,11 @@ const Contact = (props) => {
           color: "#ff6600",
         }}
       >
-        {icon ? <ImCross /> : <BsPlusLg />}
+        {icon ? <ImCross /> : <BsPlusLg title="Social media"/>}
       </Button>
 
       <Text pb={10} fontSize={14} w={"90%"} m="auto" textAlign={"center"}>
-        Designed and build by Abhishek Pratap Solanki, 2022 All right reserved.
+        Designed and build by ❤️Abhishek Pratap Solanki, 2022 All right reserved.
       </Text>
     </div>
   );
