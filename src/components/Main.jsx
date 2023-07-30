@@ -19,6 +19,7 @@ import Slide from "./Slide";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import GitHub from "./GitHub";
+import { data } from "../data/data";
 
 const Main = () => {
   const [checkTheme, setCheckTheme] = useState(true);
@@ -136,11 +137,15 @@ const Main = () => {
             ml={[1, 2, 5]}
             textAlign={"left"}
             fontWeight={700}
+            cursor="pointer"
+            onClick={() =>
+              window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
+            }
           >
             ABHI
             <span
               style={{
-                color: "#fe9119",
+                color: data.universal.color,
               }}
             >
               SHEK
@@ -165,6 +170,9 @@ const Main = () => {
             <Text
               display={["none", "none", "block", "block"]}
               className="navH"
+              _hover={{
+                color: data.universal.color,
+              }}
               onClick={() =>
                 window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
               }
@@ -174,6 +182,9 @@ const Main = () => {
             <Text
               display={["none", "none", "block", "block"]}
               className="navH"
+              _hover={{
+                color: data.universal.color,
+              }}
               onClick={executeAbout}
             >
               ABOUT
@@ -181,6 +192,9 @@ const Main = () => {
             <Text
               display={["none", "none", "block", "block"]}
               className="navH"
+              _hover={{
+                color: data.universal.color,
+              }}
               onClick={executeProject}
             >
               PROJECT
@@ -188,6 +202,9 @@ const Main = () => {
             <Text
               display={["none", "none", "block", "block"]}
               className="navH"
+              _hover={{
+                color: data.universal.color,
+              }}
               onClick={executeGithub}
             >
               GITHUB
@@ -195,6 +212,9 @@ const Main = () => {
             <Text
               display={["none", "none", "block", "block"]}
               className="navH"
+              _hover={{
+                color: data.universal.color,
+              }}
               onClick={executeSkill}
             >
               SKILLS
@@ -202,6 +222,9 @@ const Main = () => {
             <Text
               display={["none", "none", "block", "block"]}
               className="navH"
+              _hover={{
+                color: data.universal.color,
+              }}
               onClick={executeContact}
             >
               CONTACT
@@ -214,7 +237,11 @@ const Main = () => {
               <Text
                 display={["none", "none", "block", "block"]}
                 className="navH"
+                _hover={{
+                  color: data.universal.color,
+                }}
                 w={["110px", "110px", "80px", "73x"]}
+                title="View Resume on Google Drive"
               >
                 RESUME
               </Text>
@@ -223,18 +250,19 @@ const Main = () => {
             {/*===================== Dark theme Icons ======================= */}
 
             <Box
-              // border={"2px solid #fe9119"}
+              // border={{`2px solid ${data.universal.color}`}}
               onClick={Darkmode}
               borderRadius="10px"
               w={["40px", "40px", "40px", "50px"]}
               ml={["-70%", "-70%", "0%", "0%"]}
+              title="Theme"
             >
               {loading && (
                 <Box
                   p="0"
                   pt="2px"
                   borderRadius={"10px"}
-                  border="1px solid #fe9119"
+                  border={`1px solid ${data.universal.color}`}
                 >
                   <Spinner />
                 </Box>

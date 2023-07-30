@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import myimage from "../Image/profile-pic (1).png";
-import resume from "../Image/Abhishek-Pratap-Solanki-Resume.pdf";
 import {
   SimpleGrid,
   Box,
@@ -14,6 +12,7 @@ import { AiFillLinkedin } from "react-icons/ai";
 import { BiPhoneCall } from "react-icons/bi";
 import { BsGithub } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
+import { data } from "../data/data";
 
 const Home = (props) => {
   const { checkTheme } = props;
@@ -49,7 +48,7 @@ const Home = (props) => {
         alignItems={"center"}
         mt={[-6, -6, -6, -6]}
         pt={["70px", "65px", "141px", "145px"]}
-        pb={["105px","105px","155px","145px"]}
+        pb={["105px", "105px", "155px", "145px"]}
         className="HomeMain"
         style={theme}
       >
@@ -77,7 +76,7 @@ const Home = (props) => {
                 w={10}
                 m={"auto"}
                 ml={"0"}
-                src="https://raw.githubusercontent.com/ABSphreak/ABSphreak/master/gifs/Hi.gif"
+                src={data.logo_img.hii_logo}
                 alt="Abhi"
               />
             </span>
@@ -91,7 +90,7 @@ const Home = (props) => {
             ml={[-10, 13, 0, 50]}
             fontSize={[30, 30, 32, 50]}
           >
-            Abhishek Pratap Solanki
+            {data.profile.full_name}
           </Heading>
 
           {/*======================== Animation Heading ======================= */}
@@ -102,11 +101,21 @@ const Home = (props) => {
               ml={[-10, 13, 0, 50]}
               fontSize={[23, 24, 23, 30]}
               id="madeByAbhishek"
+              borderRight={`3px solid ${data.universal.color}`}
             >
               I am a
-              <span style={{ color: "#fe9119" }}> Full Stack Developer.</span>
+              <span style={{ color: data.universal.color }}>
+                {" "}
+                {data.profile.designation},
+              </span>
             </Heading>
           </div>
+          <Heading mt={1} ml={[-10, 13, 0, 50]} fontSize={[17, 18, 18, 20]}>
+            At {data.profile.company_name},
+          </Heading>
+          <Heading mt={0} ml={[-10, 13, 0, 50]} fontSize={[17, 18, 18, 20]}>
+            Since {data.profile.date_of_joining}.
+          </Heading>
 
           {/*======================== Social Media Icons ======================= */}
           <Box
@@ -119,85 +128,31 @@ const Home = (props) => {
             gap={2}
             pb={["80px", "80px", "80px", "80px"]}
           >
-            <a
-              href="http://www.linkedin.com/in/abhishekpratapsolanki"
-              target="_blank"
-            >
-              <Button
-                color="black"
-                border={"1px"}
-                bg="#ffb153"
-                fontSize={["16px", "17px", "20px", "20px"]}
-                p={[0, 0, 2, 2]}
-                borderRadius="50%"
-                transition="all .3s ease-in-out"
-                _hover={{
-                  border: "2px solid #0a66c2",
-                  transform: "scale(1.2)",
-                  bg: "#ffff",
-                  color: "#0a66c2",
-                }}
-              >
-                <AiFillLinkedin />
-              </Button>
-            </a>
-            <a href="https://github.com/Abhishek07788" target="_blank">
-              <Button
-                color="black"
-                border={"1px"}
-                bg="#ffb153"
-                fontSize={["16px", "17px", "20px", "20px"]}
-                p={[0, 0, 2, 2]}
-                borderRadius="50%"
-                transition="all .3s ease-in-out"
-                _hover={{
-                  transform: "scale(1.2)",
-                  border: "2px solid #3f3d55",
-                  bg: "#ffff",
-                  color: "#3f3d55",
-                }}
-              >
-                <BsGithub />
-              </Button>
-            </a>
-            <a href="mailto:abhisheksolanki1020@gmail.com">
-              <Button
-                color="black"
-                border={"1px"}
-                bg="#ffb153"
-                fontSize={["16px", "17px", "20px", "20px"]}
-                p={[0, 0, 2, 2]}
-                borderRadius="50%"
-                transition="all .3s ease-in-out"
-                _hover={{
-                  transform: "scale(1.2)",
-                  bg: "#ffff",
-                  border: "2px solid #f04244",
-                  color: "#f04244",
-                }}
-              >
-                <MdEmail />
-              </Button>
-            </a>
-            <a href="tel:+919758207006">
-              <Button
-                color="black"
-                border={"1px"}
-                bg="#ffb153"
-                borderRadius={"50%"}
-                fontSize={["16px", "17px", "20px", "20px"]}
-                p={[0, 0, 2, 2]}
-                transition="all .3s ease-in-out"
-                _hover={{
-                  transform: "scale(1.2)",
-                  bg: "#ffff",
-                  border: "2px solid #4db946",
-                  color: "#4db946",
-                }}
-              >
-                <BiPhoneCall />
-              </Button>
-            </a>
+            {data.profile.social_icons.map((icon, index) => (
+              <a key={index} href={icon.link} target="_blank">
+                <Button
+                  color="black"
+                  border={"1px"}
+                  bg={data.universal.color}
+                  fontSize={["16px", "17px", "20px", "20px"]}
+                  p={[0, 0, 2, 2]}
+                  title={icon.name}
+                  borderRadius="50%"
+                  transition="all .3s ease-in-out"
+                  _hover={{
+                    border: `2px solid ${icon.color}`,
+                    transform: "scale(1.2)",
+                    bg: "#ffff",
+                    color: icon.color,
+                  }}
+                >
+                  {icon.type === "linkedin" && <AiFillLinkedin />}
+                  {icon.type === "github" && <BsGithub />}
+                  {icon.type === "email" && <MdEmail />}
+                  {icon.type === "phone" && <BiPhoneCall />}
+                </Button>
+              </a>
+            ))}
           </Box>
 
           {/*======================== Resume buttons ======================= */}
@@ -205,18 +160,18 @@ const Home = (props) => {
           <SimpleGrid display={"flex"} mt={["-16", "-16", "-65", "-65"]}>
             {/*======================== View Resume ======================= */}
 
-            <a href={resume}>
+            <a href={data.profile.resume_url}>
               <Button
-                border="2px solid #ffb153"
+                border={`2px solid ${data.universal.color}`}
                 ml={[-10, 13, 0, 50]}
-                bg={"#ffb153"}
+                bg={data.universal.color}
                 color="black"
                 fontSize={["14px", "14px", "16x"]}
                 w={["90px", "90px", "100px"]}
                 mb={"40px"}
                 transition="all .3s ease-in-out"
                 _hover={{
-                  color: "#fe9119",
+                  color: data.universal.color,
                   bg: "white",
                   transform: "scale(1.15)",
                 }}
@@ -228,7 +183,10 @@ const Home = (props) => {
 
             {/*======================== Download Resume ======================= */}
 
-            <a href={resume} download={"Abhishek-Pratap-Solanki-Resume"}>
+            <a
+              href={data.profile.resume}
+              download={`${data.profile.first_name}-${data.profile.meddle_name}-${data.profile.last_name}-Resume`}
+            >
               <Button
                 onClick={() =>
                   Toast({
@@ -238,16 +196,17 @@ const Home = (props) => {
                     isClosable: true,
                   })
                 }
-                border="2px solid #ffb153"
+                border={`2px solid ${data.universal.color}`}
                 ml={3}
-                bg={"#ffb153"}
+                bg={data.universal.color}
                 color="black"
                 fontSize={["18px", "18px", "18px"]}
                 w={["30px", "30px", "40px"]}
                 fontWeight={600}
+                title="Download Resume"
                 transition="all .3s ease-in-out"
                 _hover={{
-                  color: "#fe9119",
+                  color: data.universal.color,
                   bg: "white",
                   transform: "scale(1.15)",
                 }}
@@ -280,7 +239,7 @@ const Home = (props) => {
               _hover={{
                 transform: "scale(1.2)",
               }}
-              src={myimage}
+              src={data.profile.profile_image}
               alt="Avatar"
             />
           </Box>

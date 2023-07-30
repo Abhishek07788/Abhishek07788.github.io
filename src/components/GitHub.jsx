@@ -13,6 +13,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { BsGithub } from "react-icons/bs";
+import { data } from "../data/data";
 const GitHub = (props) => {
   const { checkTheme, GithubScroll } = props;
 
@@ -57,7 +58,7 @@ const GitHub = (props) => {
     <Grid ref={GithubScroll} pb="8%" style={theme}>
       <Heading pt="5%" mb="4%">
         GitHub{" "}
-        <span style={{ color: "#fe9119" }}>
+        <span style={{ color: data.universal.color }}>
           Overview{" "}
           <a
             href="https://github.com/Abhishek07788"
@@ -84,13 +85,13 @@ const GitHub = (props) => {
         </span>
       </Heading>
 
-    {/* -------- ( Graph Chart ) ---------- */}
+      {/* -------- ( Graph Chart ) ---------- */}
       {/* <Image
         data-aos="zoom-in"
         style={theme1}
         w={["80%", "80%", "80%", "70%"]}
         m="auto"
-        border="1px solid #fe9119"
+        border={`1px solid ${data.universal.color}`}
         p="5px"
         borderRadius="10px"
         bg="transparent"
@@ -108,76 +109,40 @@ const GitHub = (props) => {
       /> */}
 
       <Box data-aos="zoom-in" w={["80%", "80%", "80%", "70%"]} m="auto" mt="5">
-        <Box
-          data-aos="zoom-in"
-          display={["grid", "grid", "grid", "flex"]}
-          w="100%"
-          gap={5}
-        >
+        <SimpleGrid columns={[1, 1, 2, 2]} data-aos="zoom-in" w="100%" gap={5}>
           {/* -------- ( Stats ) ---------- */}
-          <Image
-            style={theme1}
-            w={["100%"]}
-            m="auto"
-            border="1px solid #fe9119"
-            padding={"5px"}
-            borderRadius="10px"
-            className="github_Calender"
-            transition="all .5s ease-in-out"
-            _hover={{
-              transform: "scale(1.1)",
-              boxShadow:
-                "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px",
-            }}
-            src={
-              checkTheme
-                ? "https://github-readme-stats.vercel.app/api?username=abhishek07788&show_icons=true&locale=en&theme=tokyonight"
-                : "https://github-readme-stats.vercel.app/api?username=abhishek07788&show_icons=true&locale=en&"
-            }
-            alt="abhishek07788"
-          />
-
-          {/* -------- (Current Streak) ---------- */}
-          <Image
-            style={theme1}
-            w={["100%"]}
-            m="auto"
-            border="1px solid #fe9119"
-            padding={"5px"}
-            borderRadius="10px"
-            className="github_Calender"
-            transition="all .5s ease-in-out"
-            _hover={{
-              transform: "scale(1.1)",
-              boxShadow:
-                "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px",
-            }}
-            src={
-              checkTheme
-                ? "https://github-readme-streak-stats.herokuapp.com/?user=abhishek07788&show_icons=true&locale=en&theme=tokyonight"
-                : "https://github-readme-streak-stats.herokuapp.com/?user=abhishek07788&show_icons=true&locale=en&"
-            }
-            alt="abhishek07788"
-          />
-        </Box>
-        <Box
-          display={["grid", "grid", "grid", "flex"]}
-          w={"100%"}
-          gap={5}
-          mt="5"
-        >
-          {/* -------- (Calender) ---------- */}
+          {data.github.github_stats.map((item, index) => (
+            <Image
+              key={index}
+              style={theme1}
+              w={["100%"]}
+              m="auto"
+              border={`1px solid ${data.universal.color}`}
+              padding={"5px"}
+              borderRadius="10px"
+              className="github_Calender"
+              transition="all .5s ease-in-out"
+              _hover={{
+                transform: "scale(1.1)",
+                boxShadow:
+                  "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px",
+              }}
+              src={checkTheme ? item.light_theme_link : item.dark_theme_link}
+              alt="github Stack"
+            />
+          ))}
           <Box
             overflow={"hidden"}
             color={checkTheme ? "white" : "black"}
             bg={checkTheme ? "#1a202c" : "#ffffff"}
             w={["100%"]}
             m="auto"
-            border="1px solid #fe9119"
+            border={`1px solid ${data.universal.color}`}
             p={"20px"}
-            pt={["45px", "45px", "72px", "72px"]}
-            pb={["45px", "45px", "72px", "72px"]}
+            pt={["45px", "45px", "42px", "92px"]}
+            pb={["45px", "45px", "42px", "92px"]}
             borderRadius="10px"
+            title="GitHub Calender"
             className="github_Calender"
             transition="all .5s ease-in-out"
             _hover={{
@@ -194,31 +159,15 @@ const GitHub = (props) => {
               year={new Date().getFullYear()}
             />
           </Box>
-
-          {/* -------- (Most use language) ---------- */}
-          <Image
-            style={theme1}
-            w={["100%", "100%", "103%", "103%"]}
-            m="auto"
-            border="1px solid #fe9119"
-            padding={"5px"}
-            borderRadius="10px"
-            className="github_Calender"
-            transition="all .5s ease-in-out"
-            _hover={{
-              transform: "scale(1.1)",
-              boxShadow:
-                "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px",
-            }}
-            src={
-              checkTheme
-                ? "https://github-readme-stats.vercel.app/api/top-langs?username=abhishek07788&show_icons=true&locale=en&layout=compact&theme=tokyonight"
-                : "https://github-readme-stats.vercel.app/api/top-langs?username=abhishek07788&show_icons=true&locale=en&layout=compact&"
-            }
-            alt="Abhishek07788"
-          />
-        </Box>
+        </SimpleGrid>
+        <Box
+          display={["grid", "grid", "grid", "flex"]}
+          w={"100%"}
+          gap={5}
+          mt="5"
+        ></Box>
       </Box>
+
       {/* =============== ( STATISTICS SECTION ) =============== */}
       <SimpleGrid
         columns={[2, 2, 4, 4]}
@@ -230,74 +179,26 @@ const GitHub = (props) => {
         alignContent="center"
         data-aos="zoom-in"
       >
-        <Box
-          style={theme1}
-          borderRadius={"50"}
-          p="5"
-          border="1px solid #fe9119"
-          boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px"
-          transition="all .5s ease-in-out"
-          _hover={{
-            transform: "scale(1.1)",
-            boxShadow:
-              "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px",
-          }}
-        >
-          <Heading color={"#fe9119"}>1200+</Heading>
-          <Heading fontSize={["25","28","30","35"]} fontsize="10">Hours</Heading>
-          <Text mt="3">Coding</Text>
-        </Box>
-        <Box
-          style={theme1}
-          borderRadius={"50"}
-          p="5"
-          border="1px solid #fe9119"
-          boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px"
-          transition="all .5s ease-in-out"
-          _hover={{
-            transform: "scale(1.1)",
-            boxShadow:
-              "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px",
-          }}
-        >
-          <Heading color={"#fe9119"}>8+</Heading>
-          <Heading fontSize={["25","28","30","35"]} fontsize="10">Projects</Heading>
-          <Text mt="3">Done</Text>
-        </Box>
-        <Box
-          style={theme1}
-          borderRadius={"50"}
-          p="5"
-          border="1px solid #fe9119"
-          boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px"
-          transition="all .5s ease-in-out"
-          _hover={{
-            transform: "scale(1.1)",
-            boxShadow:
-              "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px",
-          }}
-        >
-          <Heading color={"#fe9119"}>460+</Heading>
-          <Heading fontSize={["25","28","30","35"]} fontsize="10">DSA</Heading>
-          <Text mt="3">Solved (OJ)</Text>
-        </Box>
-        <Box
-          style={theme1}
-          borderRadius={"50"}
-          p="5"
-          border="1px solid #fe9119"
-          boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px"
-          transition="all .5s ease-in-out"
-          _hover={{
-            transform: "scale(1.1)",
-            boxShadow:
-              "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px",
-          }}
-        >
-          <Heading color={"#fe9119"}>1000+</Heading>
-          <Heading fontSize={["25","28","30","35"]}>Hours</Heading>
-          <Text mt="3">DSA</Text>
-        </Box>
+        {data.github.stats.map((item, index) => (
+          <Box
+            key={index}
+            style={theme1}
+            borderRadius={"50"}
+            p="5"
+            border={`1px solid ${data.universal.color}`}
+            boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px"
+            transition="all .5s ease-in-out"
+            _hover={{
+              transform: "scale(1.1)",
+              boxShadow:
+                "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px",
+            }}
+          >
+            <Heading color={data.universal.color}>{item.number}+</Heading>
+            <Heading fontSize={["25", "28", "30", "35"]}>{item.title}</Heading>
+            <Text mt="3">{item.subTitle}</Text>
+          </Box>
+        ))}
       </SimpleGrid>
     </Grid>
   );

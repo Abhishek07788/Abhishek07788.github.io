@@ -11,9 +11,10 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { data } from "../data/data";
 
 const About = (props) => {
-  const { checkTheme,aboutScroll } = props;
+  const { checkTheme, aboutScroll } = props;
   const [theme, setTheme] = useState({});
 
   // =================== Animation =====================>
@@ -40,7 +41,7 @@ const About = (props) => {
 
   return (
     <div ref={aboutScroll} className="mainDiv" style={theme}>
-      <Heading fontSize={40} color={"#fe9119"}>
+      <Heading fontSize={40} color={data.universal.color}>
         About <span style={theme}>Me</span>
       </Heading>
 
@@ -52,50 +53,31 @@ const About = (props) => {
         <Image
           data-aos="zoom-in"
           m={"auto"}
+          mt={["-10%"]}
           w={["83%", "83%", "83%", "80%"]}
-          src="https://www.slnsoftwares.com/images/gif/working_man.gif"
-          alt="Projects"
+          src={data.about_me.image}
+          alt="About me"
         />
 
-        {/*======================== LISt me Main div ======================= */}
-
-        <SimpleGrid data-aos="zoom-in">
-          {/*======================== List ======================= */}
-
-          <List
-            m={"auto"}
-            w={["70%", "70%", "80%", "85%"]}
-            fontSize={["14px", "15px", "20px", "19px"]}
-            lineHeight="24px"
-            mt={"5%"}
-            textAlign={"left"}
-            className="AboutList"
-          >
-            <ListItem mt={14}>
-              <ListIcon as={CheckCircleIcon} color="#fe9119" />
-              Hello, My name is <b>Abhishek Pratap Solanki </b> and I enjoy
-              creating thing that live on the internet.
-            </ListItem>
-            <ListItem mt={4}>
-              <ListIcon as={CheckCircleIcon} color="#fe9119" />
-              Quick learner and an aspiring full-stack web developer with core
-              knowledge of MERN stack technology. 
-            </ListItem>
-            <ListItem mt={4}>
-              <ListIcon as={CheckCircleIcon} color="#fe9119" />
-              <b>Full Stack Developer </b>with hands on experience in
-              building React Apps. Works efficiently both in frontend as
-              well as backend and is proficient in Data Structure and Algorithms
-              with good problem solving skills.
-            </ListItem>
-            <ListItem mt={4}>
-              <ListIcon as={CheckCircleIcon} color="#fe9119" />I built 4 major
-              projects. Learned a great deal about teamwork, leadership, and
-              communication. After months of rigorous training, here I am looking
-              for an opportunity as a full Stack web Developer.
-            </ListItem>
-          </List>
-        </SimpleGrid>
+        {/*============ Content =========== */}
+        <List
+          data-aos="zoom-in"
+          m={"auto"}
+          w={["70%", "70%", "80%", "85%"]}
+          fontSize={["14px", "15px", "20px", "19px"]}
+          lineHeight="24px"
+          mt={"5%"}
+          textAlign={"left"}
+          className="AboutList"
+        >
+          {data.about_me.contents &&
+            data.about_me.contents.map((item, i) => (
+              <ListItem key={i} mt={6}>
+                <ListIcon as={CheckCircleIcon} color={data.universal.color} />
+                {item.content}
+              </ListItem>
+            ))}
+        </List>
       </SimpleGrid>
     </div>
   );

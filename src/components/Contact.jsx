@@ -7,19 +7,20 @@ import {
   Input,
   Text,
   useToast,
-  Textarea,
 } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { AiFillLinkedin, AiFillGithub, AiOutlineMail } from "react-icons/ai";
 import { FiPhoneCall } from "react-icons/fi";
-import { BsPlusLg } from "react-icons/bs";
+import { BsGithub, BsPlusLg } from "react-icons/bs";
 import { ImCross } from "react-icons/im";
 import { FaRegArrowAltCircleUp } from "react-icons/fa";
 import { useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import emailimg from "../Image/emailimg.png";
 import emailjs from "emailjs-com";
+import { data } from "../data/data";
+import { MdEmail } from "react-icons/md";
+import { BiPhoneCall } from "react-icons/bi";
 
 const Contact = (props) => {
   const { checkTheme, contactScroll } = props;
@@ -28,43 +29,50 @@ const Contact = (props) => {
   const [icon, setIcon] = useState(false);
   const toast = useToast();
 
-  //------------------------ Email Send --------------
+  //-------- Email Send --------------
   const sendEmail = (e) => {
     e.preventDefault();
-    emailjs.sendForm(
-      "service_ml5brp5",
-      "template_xe5tl5l",
-      e.target,
-      "_-SYa4AW4mbtbVQiF"
-    ).then(res=>{
-      console.log(res)
-    }).catch((err)=>{
-      console.log(err)
-    })
-    toast({
-      title: "Thanks for contacting me.🙂",
-      description: "I will reply you soon.",
-      status: "success",
-      duration: 9000,
-      isClosable: true,
-    });
-    // toast({
-    //   title: "This service has been stop from backend!",
-    //   description: "Because of some students spam, It will be stated soon.🙂",
-    //   status: "error",
-    //   duration: 9000,
-    //   isClosable: true,
-    // });
-    e.target.reset()
+    if (data.profile.stop_form) {
+      toast({
+        title: "This service has been stop from backend!",
+        description:
+          "Because of some students spam, It will be started soon. Till then we can connect on call.🙂",
+        status: "error",
+        duration: 9000,
+        isClosable: true,
+      });
+    } else {
+      emailjs
+        .sendForm(
+          "service_ml5brp5",
+          "template_xe5tl5l",
+          e.target,
+          "_-SYa4AW4mbtbVQiF"
+        )
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+      toast({
+        title: "Thanks for contacting me.🙂",
+        description: "I will reply you soon.",
+        status: "success",
+        duration: 9000,
+        isClosable: true,
+      });
+    }
+    e.target.reset();
   };
 
-  // =================== Animation =====================>
+  // =========== Animation =============>
 
   useEffect(() => {
     AOS.init({ offset: 300, duration: 1000 });
   }, []);
 
-  // =================== Theme 1 =====================>
+  // =========== Theme 1 =============>
 
   useEffect(() => {
     if (checkTheme) {
@@ -80,7 +88,7 @@ const Contact = (props) => {
     }
   }, [checkTheme]);
 
-  // =================== Theme 2 =====================>
+  // =========== Theme 2 =============>
 
   useEffect(() => {
     if (checkTheme) {
@@ -98,11 +106,11 @@ const Contact = (props) => {
 
   return (
     <div ref={contactScroll} className="mainDiv" style={theme}>
-      <Heading fontSize={40} color="#fe9119">
+      <Heading fontSize={40} color={data.universal.color}>
         Contact <span style={theme}>Me</span>
       </Heading>
       <SimpleGrid columns={[1, 1, 1, 2]} pb="70px">
-        {/* ================== Email and boy image ================== */}
+        {/* ========== Email and boy image ========== */}
 
         <Image
           mr={["auto", "auto", "auto", "-100px"]}
@@ -110,12 +118,12 @@ const Contact = (props) => {
           mt={30}
           m="auto"
           h={["300px", "300px", "420px", "450px"]}
-          src={emailimg}
+          src={data.profile.email_img}
           alt="emailimg"
         />
 
         <SimpleGrid data-aos="zoom-in">
-          {/* ================== Social midea Buttons ================== */}
+          {/* ========== Social midea Buttons ========== */}
 
           <Box display={"flex"} m="auto" gap={[2, 2, 7, 8]} mt="100px">
             <a
@@ -136,7 +144,7 @@ const Contact = (props) => {
                   bg: "#ffff",
                   color: "#0a66c2",
                 }}
-                data-aos="fade-right"
+                data-aos="fade-up"
               >
                 <AiFillLinkedin
                   style={{ marginRight: "4", fontSize: "20px" }}
@@ -153,13 +161,14 @@ const Contact = (props) => {
                 p={"0"}
                 pl={[1, 1, 2, 3]}
                 pr={[2, 2, 3, 4]}
+                title="Abhishek07788"
                 transition="all .4s ease-in-out"
                 _hover={{
                   transform: "scale(1.1)",
                   bg: "#ffff",
                   color: "#3f3d55",
                 }}
-                data-aos="fade-right"
+                data-aos="fade-up"
               >
                 <AiFillGithub style={{ marginRight: "4", fontSize: "20px" }} />
                 Github
@@ -174,13 +183,14 @@ const Contact = (props) => {
                 p={"0"}
                 pl={[1, 1, 2, 3]}
                 pr={[2, 2, 3, 4]}
+                title="abhisheksolanki1020@gmail.com"
                 transition="all .4s ease-in-out"
                 _hover={{
                   transform: "scale(1.1)",
                   bg: "#ffff",
                   color: "#f04244",
                 }}
-                data-aos="fade-left"
+                data-aos="fade-up"
               >
                 <AiOutlineMail style={{ marginRight: "4", fontSize: "20px" }} />
                 Email
@@ -195,29 +205,30 @@ const Contact = (props) => {
                 p={"0"}
                 pl={[1, 1, 0, 3]}
                 pr={[1, 1, 0, 3]}
+                title="Call & WhatsApp"
                 transition="all .4s ease-in-out"
                 _hover={{
                   transform: "scale(1.1)",
                   bg: "#ffff",
                   color: "#4db946",
                 }}
-                data-aos="fade-left"
+                data-aos="fade-up"
               >
                 <FiPhoneCall style={{ marginRight: "4", fontSize: "20px" }} />
               </Button>
             </a>
           </Box>
 
-          {/* ================== Email Form ================== */}
+          {/* ========== Email Form ========== */}
 
           <Box m={"auto"} mt="15px" width="65%">
             <Heading
-              data-aos="fade-right"
+              data-aos="fade-up"
               fontSize={22}
               style={theme}
               textAlign="left"
             >
-              Get In <span style={{ color: "#fe9119" }}>Touch.</span>
+              Get In <span style={{ color: data.universal.color }}>Touch.</span>
             </Heading>
             <form onSubmit={sendEmail}>
               <Input
@@ -263,15 +274,15 @@ const Contact = (props) => {
                 required
               />
 
-              {/* ===================== Reset button============ */}
+              {/* ============= Reset button============ */}
               <Box display={"flex"} gap="3">
                 <Input
                   type={"submit"}
-                  border="2px solid #fe9119"
+                  border={`2px solid ${data.universal.color}`}
                   fontSize={18}
                   mt={1}
                   color="black"
-                  bg="#fe9119"
+                  bg={data.universal.color}
                   w="100%"
                   transition="all .4s ease-in-out"
                   _hover={{
@@ -314,7 +325,7 @@ const Contact = (props) => {
         </SimpleGrid>
       </SimpleGrid>
 
-      {/* ================== Right side Icons ================== */}
+      {/* ========== Right side Icons ========== */}
 
       <Box
         position={"fixed"}
@@ -326,92 +337,34 @@ const Contact = (props) => {
         pb={["80px", "80px", "160px", "80px"]}
         display={icon ? "grid" : "none"}
       >
-        <a
-          href="http://www.linkedin.com/in/abhishekpratapsolanki"
-          target="_blank"
-        >
-          <Button
-            border="2px solid #0a66c2"
-            color="#ffff"
-            bg="#0a66c2"
-            fontSize={["16px", "17px", "25px", "20px"]}
-            p={[0, 0, "20px", 0]}
-            pt={["none", "none", "25px", "none"]}
-            pb={["none", "none", "25px", "none"]}
-            borderRadius="50%"
-            transition="all .4s ease-in-out"
-            _hover={{
-              transform: "scale(1.1)",
-              bg: "#ffff",
-              color: "#0a66c2",
-            }}
-          >
-            <AiFillLinkedin />
-          </Button>
-        </a>
-        <a href="https://github.com/Abhishek07788" target="_blank">
-          <Button
-            border="2px solid #3f3d55"
-            color="#ffff"
-            bg="#3f3d55"
-            fontSize={["16px", "17px", "25px", "20px"]}
-            p={[0, 0, "20px", 0]}
-            pt={["none", "none", "25px", "none"]}
-            pb={["none", "none", "25px", "none"]}
-            borderRadius="50%"
-            transition="all .4s ease-in-out"
-            _hover={{
-              transform: "scale(1.1)",
-              bg: "#ffff",
-              color: "#3f3d55",
-            }}
-          >
-            <AiFillGithub />
-          </Button>
-        </a>
-        <a href="mailto:abhisheksolanki1020@gmail.com">
-          <Button
-            border="2px solid #f04244"
-            color="#ffff"
-            bg="#f04244"
-            fontSize={["16px", "17px", "25px", "20px"]}
-            p={[0, 0, "20px", 0]}
-            pt={["none", "none", "25px", "none"]}
-            pb={["none", "none", "25px", "none"]}
-            borderRadius="50%"
-            transition="all .4s ease-in-out"
-            _hover={{
-              transform: "scale(1.1)",
-              bg: "#ffff",
-              color: "#f04244",
-            }}
-          >
-            <AiOutlineMail />
-          </Button>
-        </a>
-        <a href="tel:+919758207006">
-          <Button
-            border="2px solid #4db946"
-            borderRadius={"50%"}
-            fontSize={["16px", "17px", "20px", "20px"]}
-            p={[0, 0, "20px", 0]}
-            pt={["none", "none", "25px", "none"]}
-            pb={["none", "none", "25px", "none"]}
-            color="#ffff"
-            bg="#4db946"
-            transition="all .4s ease-in-out"
-            _hover={{
-              transform: "scale(1.1)",
-              bg: "#ffff",
-              color: "#4db946",
-            }}
-          >
-            <FiPhoneCall />
-          </Button>
-        </a>
+        {data.profile.social_icons.map((icon, index) => (
+          <a href={icon.link} key={index} title={icon.name} target="_blank">
+            <Button
+              border={`2px solid ${icon.color}`}
+              color="#ffff"
+              bg={icon.color}
+              fontSize={["16px", "17px", "25px", "20px"]}
+              p={[0, 0, "20px", 0]}
+              pt={["none", "none", "25px", "none"]}
+              pb={["none", "none", "25px", "none"]}
+              borderRadius="50%"
+              transition="all .4s ease-in-out"
+              _hover={{
+                transform: "scale(1.1)",
+                bg: "#ffff",
+                color: icon.color,
+              }}
+            >
+              {icon.type === "linkedin" && <AiFillLinkedin />}
+              {icon.type === "github" && <BsGithub />}
+              {icon.type === "email" && <MdEmail />}
+              {icon.type === "phone" && <BiPhoneCall />}
+            </Button>
+          </a>
+        ))}
       </Box>
 
-      {/*======================== Up arrow Icon ======================= */}
+      {/*======================== Up arrow Icon =============== */}
       <Button
         data-aos="zoom-in"
         onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}
@@ -421,9 +374,9 @@ const Contact = (props) => {
         zIndex={10}
         mr={[4, 4, "30.6px", 4]}
         mb={["80px", "80px", "160px", "80px"]}
-        border="2px solid #ff6600"
+        border={`2px solid ${data.universal.color}`}
         color="#ffff"
-        bg="#ff6600"
+        bg={data.universal.color}
         fontSize={["15px", "18px", "20px", "21px"]}
         p={[0, 0, "20px", 0]}
         pt={["15px", "none", "25px", "none"]}
@@ -433,13 +386,13 @@ const Contact = (props) => {
         _hover={{
           transform: "scale(1.1)",
           bg: "#ffff",
-          color: "#ff6600",
+          color: data.universal.color,
         }}
       >
-        <FaRegArrowAltCircleUp title="Go to Top"/>
+        <FaRegArrowAltCircleUp title="Go to Top" />
       </Button>
 
-      {/* ================== Plus Button ================== */}
+      {/* ========== Plus Button ========== */}
       <Button
         onClick={() => setIcon(!icon)}
         position={"fixed"}
@@ -448,9 +401,9 @@ const Contact = (props) => {
         right="0"
         mr={[4, 4, 7, 4]}
         mb={["8", "8", "95px", "8"]}
-        border="2px solid #ff6600"
+        border={`2px solid ${data.universal.color}`}
         color="#ffff"
-        bg="#ff6600"
+        bg={data.universal.color}
         fontSize={["16px", "17px", "20px", "20px"]}
         p={[0, 0, "20px", 0]}
         pt={["none", "none", "25px", "none"]}
@@ -460,14 +413,15 @@ const Contact = (props) => {
         _hover={{
           transform: "scale(1.1)",
           bg: "#ffff",
-          color: "#ff6600",
+          color: data.universal.color,
         }}
       >
-        {icon ? <ImCross /> : <BsPlusLg title="Social media"/>}
+        {icon ? <ImCross /> : <BsPlusLg title="Social media" />}
       </Button>
 
       <Text pb={10} fontSize={14} w={"90%"} m="auto" textAlign={"center"}>
-        Designed and build by ❤️Abhishek Pratap Solanki, 2022 All right reserved.
+        Designed and build by ❤️{data.profile.full_name}, 2022 All right
+        reserved.
       </Text>
     </div>
   );

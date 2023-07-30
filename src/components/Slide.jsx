@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { useRef } from "react";
+import { data } from "../data/data";
 const Slide = (props) => {
   const {
     executeSkill,
@@ -74,7 +75,7 @@ const Slide = (props) => {
                   p="1"
                   fontSize={15}
                   borderRadius={5}
-                  _hover={{ bg: "#fe9119", color: "#ffff" }}
+                  _hover={{ bg: data.universal.color, color: "#ffff" }}
                   onClick={homefunc}
                 >
                   HOME
@@ -83,7 +84,7 @@ const Slide = (props) => {
                   p="1"
                   fontSize={15}
                   borderRadius={5}
-                  _hover={{ bg: "#fe9119", color: "#ffff" }}
+                  _hover={{ bg: data.universal.color, color: "#ffff" }}
                   onClick={aboutfunc}
                 >
                   ABOUT
@@ -92,7 +93,7 @@ const Slide = (props) => {
                   p="1"
                   fontSize={15}
                   borderRadius={5}
-                  _hover={{ bg: "#fe9119", color: "#ffff" }}
+                  _hover={{ bg: data.universal.color, color: "#ffff" }}
                   onClick={projectfunc}
                 >
                   PROJECTS
@@ -101,7 +102,7 @@ const Slide = (props) => {
                   p="1"
                   fontSize={15}
                   borderRadius={5}
-                  _hover={{ bg: "#fe9119", color: "#ffff" }}
+                  _hover={{ bg: data.universal.color, color: "#ffff" }}
                   onClick={githubfunc}
                 >
                   GITHUB
@@ -110,7 +111,7 @@ const Slide = (props) => {
                   p="1"
                   fontSize={15}
                   borderRadius={5}
-                  _hover={{ bg: "#fe9119", color: "#ffff" }}
+                  _hover={{ bg: data.universal.color, color: "#ffff" }}
                   onClick={skillfunc}
                 >
                   SKILLS
@@ -119,7 +120,7 @@ const Slide = (props) => {
                   p="1"
                   fontSize={15}
                   borderRadius={5}
-                  _hover={{ bg: "#fe9119", color: "#ffff" }}
+                  _hover={{ bg: data.universal.color, color: "#ffff" }}
                   onClick={contactfunc}
                 >
                   CONTACT
@@ -134,7 +135,7 @@ const Slide = (props) => {
                     bg={"#565e59"}
                     fontSize={15}
                     borderRadius={5}
-                    _hover={{ bg: "#fe9119", color: "#ffff" }}
+                    _hover={{ bg: data.universal.color, color: "#ffff" }}
                   >
                     RESUME
                   </Text>
