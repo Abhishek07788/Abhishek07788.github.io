@@ -110,6 +110,19 @@ const Main = () => {
     }
   }, [checkTheme]);
 
+  function downloadResume(event) {
+    event.preventDefault(); // Prevents default behavior (following the link)
+    const link = data.profile.resume; // Get the link from the clicked element
+    window.open(link, "_blank"); // Open the link in a new tab
+    setTimeout(() => {
+      // Wait for a moment before initiating download
+      const a = document.createElement("a");
+      a.href = link;
+      a.download = "Abhishek-Pratap-Solanki-Resume.pdf"; // If you want to specify a filename, replace '' with the desired filename
+      a.click(); // Programmatically trigger the download
+    }, 100);
+  }
+
   return (
     <div>
       {/*======================== MAin div ======================= */}
@@ -168,6 +181,7 @@ const Main = () => {
             gap={["0", "0", "2", "5"]}
           >
             <Text
+              cursor={"pointer"}
               display={["none", "none", "block", "block"]}
               className="navH"
               _hover={{
@@ -180,6 +194,7 @@ const Main = () => {
               HOME
             </Text>
             <Text
+              cursor={"pointer"}
               display={["none", "none", "block", "block"]}
               className="navH"
               _hover={{
@@ -190,6 +205,7 @@ const Main = () => {
               ABOUT
             </Text>
             <Text
+              cursor={"pointer"}
               display={["none", "none", "block", "block"]}
               className="navH"
               _hover={{
@@ -200,6 +216,7 @@ const Main = () => {
               PROJECT
             </Text>
             <Text
+              cursor={"pointer"}
               display={["none", "none", "block", "block"]}
               className="navH"
               _hover={{
@@ -210,6 +227,7 @@ const Main = () => {
               GITHUB
             </Text>
             <Text
+              cursor={"pointer"}
               display={["none", "none", "block", "block"]}
               className="navH"
               _hover={{
@@ -220,6 +238,7 @@ const Main = () => {
               SKILLS
             </Text>
             <Text
+              cursor={"pointer"}
               display={["none", "none", "block", "block"]}
               className="navH"
               _hover={{
@@ -229,12 +248,9 @@ const Main = () => {
             >
               CONTACT
             </Text>
-            <a
-              href="https://drive.google.com/file/d/11cBo69VOoq3wcwtPFDMv0t6R7MeHgrB8/view?usp=sharing"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a onClick={downloadResume}>
               <Text
+                cursor={"pointer"}
                 display={["none", "none", "block", "block"]}
                 className="navH"
                 _hover={{

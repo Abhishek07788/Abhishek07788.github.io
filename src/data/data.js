@@ -13,6 +13,8 @@ export const data = {
     designation: "Full Stack Developer",
     company_name: "Digited Labs Private Limited, Hyderabad",
     date_of_joining: "01 May 2023",
+    date_of_left: "31 May 2024",
+    date_of_IT: "01-04-2022",
     mobile: "9758207006",
     email: "abhisheksolanki1020.gmail.com",
     github_username: "Abhishek07788",
@@ -71,8 +73,9 @@ export const data = {
           "Hello, my name is Abhishek Pratap Solanki, and I enjoy creating things that live on the internet.",
       },
       {
-        content:
-          "Quick learner and having 1.5 years of experience in full-stack web development with core knowledge of MERN stack technology.",
+        content: `Quick learner and having ${getTotalExperience(
+          "01-04-2022"
+        )} of experience in full-stack web development with core knowledge of MERN stack technology.`,
       },
       {
         content:
@@ -192,6 +195,23 @@ export const data = {
       deploy_link: "https://bejewelled-lebkuchen-8a5107.netlify.app/",
       deployed_on: "Netlify",
     },
+    // {
+    //   image: "./assets/chat-app.gif",
+    //   name: "Live Chat App",
+    //   description:
+    //     "The Live Chat App enables one-on-one conversations with blocking features for user control. It showcases live typing status and Online status, enhancing real-time interaction and communication privacy.",
+    //   is_group_project: false,
+    //   collaborators: 0,
+    //   duration: "09 Days",
+    //   tech_stacks:
+    //     "NextJS | TypeScript | Material UI | axios | socket-io-client | JavaScript | socket.io | NODEJS | EXPRESS | MONGODB | JWT",
+    //   github: "https://github.com/Abhishek07788/live-chat-app",
+    //   video_watch_on: "Video is not Available",
+    //   is_github_private: false,
+    //   video: "",
+    //   deploy_link: "",
+    //   deployed_on: "(Link is not Available)",
+    // },
   ],
 
   // --- GitHub overView --
@@ -319,3 +339,38 @@ export const data = {
     },
   ],
 };
+
+export function getTotalExperience(inputDate) {
+  // Split the inputDate by "-" and construct a new Date object
+  let [day, month, year] = inputDate.split("-");
+  let inputDateObj = new Date(`${year}-${month}-${day}`);
+  let currentDate = new Date();
+
+  let yearsDifference = currentDate.getFullYear() - inputDateObj.getFullYear();
+  let currentMonth = currentDate.getMonth() + 1;
+  let inputMonth = inputDateObj.getMonth();
+  let monthsDifference = currentMonth - inputMonth;
+  let daysDifference = currentDate.getDate() - inputDateObj.getDate();
+
+  // Adjust years difference based on months and days
+  if (monthsDifference < 0 || (monthsDifference === 0 && daysDifference < 0)) {
+    yearsDifference--;
+    monthsDifference += 12; // Add 12 months to monthsDifference
+  }
+
+  let totalYears =
+    yearsDifference + monthsDifference / 12 + daysDifference / 365;
+
+  // Check if totalYears is less than 1.0
+  if (totalYears < 1.0) {
+    let totalMonths = yearsDifference * 12 + monthsDifference;
+    return `${totalMonths}+ Months`;
+  } else {
+    // Check if totalYears is a whole number
+    if (Number.isInteger(totalYears)) {
+      return `${totalYears}+ ${totalYears > 1 ? "Years" : "Year"}`;
+    } else {
+      return `${totalYears.toFixed(1)}+ Years`;
+    }
+  }
+}

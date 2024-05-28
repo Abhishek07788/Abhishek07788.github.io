@@ -205,7 +205,7 @@ const Contact = (props) => {
                 p={"0"}
                 pl={[1, 1, 0, 3]}
                 pr={[1, 1, 0, 3]}
-                title="Call & WhatsApp"
+                title="Call & WhatsApp: 9758207006"
                 transition="all .4s ease-in-out"
                 _hover={{
                   transform: "scale(1.1)",

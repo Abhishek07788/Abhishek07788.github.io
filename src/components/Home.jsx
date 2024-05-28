@@ -12,7 +12,7 @@ import { AiFillLinkedin } from "react-icons/ai";
 import { BiPhoneCall } from "react-icons/bi";
 import { BsGithub } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
-import { data } from "../data/data";
+import { data, getTotalExperience } from "../data/data";
 
 const Home = (props) => {
   const { checkTheme } = props;
@@ -34,6 +34,19 @@ const Home = (props) => {
       });
     }
   }, [checkTheme]);
+
+  function downloadResume(event) {
+    event.preventDefault(); // Prevents default behavior (following the link)
+    const link = data.profile.resume; // Get the link from the clicked element
+    window.open(link, "_blank"); // Open the link in a new tab
+    setTimeout(() => {
+      // Wait for a moment before initiating download
+      const a = document.createElement("a");
+      a.href = link;
+      a.download = "Abhishek-Pratap-Solanki-Resume.pdf"; // If you want to specify a filename, replace '' with the desired filename
+      a.click(); // Programmatically trigger the download
+    }, 100);
+  }
 
   return (
     <div>
@@ -110,11 +123,20 @@ const Home = (props) => {
               </span>
             </Heading>
           </div>
+
+          <Heading
+            color={data.universal.color}
+            mt={1}
+            ml={[-10, 13, 0, 50]}
+            fontSize={[17, 18, 18, 20]}
+          >
+            Experience:
+          </Heading>
           <Heading mt={1} ml={[-10, 13, 0, 50]} fontSize={[17, 18, 18, 20]}>
-            At {data.profile.company_name},
+            {data.profile.company_name},
           </Heading>
           <Heading mt={0} ml={[-10, 13, 0, 50]} fontSize={[17, 18, 18, 20]}>
-            Since {data.profile.date_of_joining}.
+            {data.profile.date_of_joining} To {data.profile.date_of_left}.
           </Heading>
 
           {/*======================== Social Media Icons ======================= */}
@@ -124,7 +146,7 @@ const Home = (props) => {
             display={"flex"}
             w={"60%"}
             ml={[-10, 13, 0, 50]}
-            mt={5}
+            mt={3}
             gap={2}
             pb={["80px", "80px", "80px", "80px"]}
           >
@@ -160,7 +182,12 @@ const Home = (props) => {
           <SimpleGrid display={"flex"} mt={["-16", "-16", "-65", "-65"]}>
             {/*======================== View Resume ======================= */}
 
-            <a href={data.profile.resume_url}>
+            <a
+              href={data.resume_url}
+              onClick={downloadResume}
+              target="_blank"
+              rel="noreferrer"
+            >
               <Button
                 border={`2px solid ${data.universal.color}`}
                 ml={[-10, 13, 0, 50]}

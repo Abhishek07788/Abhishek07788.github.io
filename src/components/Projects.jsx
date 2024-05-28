@@ -178,34 +178,38 @@ const Projects = (props) => {
                     </Box>
                   </a>
                 )}
-                <a
-                  href={item.video}
-                  target="_blank"
-                  title={`Video ( ${item.video_watch_on} )`}
-                  rel="noreferrer"
-                >
-                  <Box
-                    _hover={{
-                      color: data.universal.color,
-                    }}
+                {item.video && (
+                  <a
+                    href={item.video}
+                    target="_blank"
+                    title={`Video ( ${item.video_watch_on} )`}
+                    rel="noreferrer"
                   >
-                    <RiVideoFill mt={-1.5} className="gitEye" />
-                  </Box>
-                </a>
-                <a
-                  href={item.deploy_link}
-                  target="_blank"
-                  title={`Deployed on ${item.deployed_on}`}
-                  rel="noreferrer"
-                >
-                  <Box
-                    _hover={{
-                      color: data.universal.color,
-                    }}
+                    <Box
+                      _hover={{
+                        color: data.universal.color,
+                      }}
+                    >
+                      <RiVideoFill mt={-1.5} className="gitEye" />
+                    </Box>
+                  </a>
+                )}
+                {item.deploy_link && (
+                  <a
+                    href={item.deploy_link}
+                    target="_blank"
+                    title={`Deployed on ${item.deployed_on}`}
+                    rel="noreferrer"
                   >
-                    <HiEye mt={-1.5} className="gitEye" />
-                  </Box>
-                </a>
+                    <Box
+                      _hover={{
+                        color: data.universal.color,
+                      }}
+                    >
+                      <HiEye mt={-1.5} className="gitEye" />
+                    </Box>
+                  </a>
+                )}
               </Box>
             </Box>
           ))}
