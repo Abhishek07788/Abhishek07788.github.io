@@ -12,7 +12,7 @@ import { AiFillLinkedin } from "react-icons/ai";
 import { BiPhoneCall } from "react-icons/bi";
 import { BsGithub } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
-import { data, getTotalExperience } from "../data/data";
+import { data } from "../data/data";
 
 const Home = (props) => {
   const { checkTheme } = props;
@@ -124,7 +124,7 @@ const Home = (props) => {
             </Heading>
           </div>
 
-          <Heading
+          {/* <Heading
             color={data.universal.color}
             mt={1}
             ml={[-10, 13, 0, 50]}
@@ -137,7 +137,7 @@ const Home = (props) => {
           </Heading>
           <Heading mt={0} ml={[-10, 13, 0, 50]} fontSize={[17, 18, 18, 20]}>
             {data.profile.date_of_joining} To {data.profile.date_of_left}.
-          </Heading>
+          </Heading> */}
 
           {/*======================== Social Media Icons ======================= */}
           <Box

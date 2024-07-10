@@ -70,12 +70,12 @@ export const data = {
     contents: [
       {
         content:
-          "Hello, my name is Abhishek Pratap Solanki, and I enjoy creating things that live on the internet.",
+          "Hello, my name is Abhishek Pratap Solanki, I am a Full Stack Developer at DigitEd Labs Private limited, Hyderabad.",
       },
       {
         content: `Quick learner and having ${getTotalExperience(
           "01-04-2022"
-        )} of experience in full-stack web development with core knowledge of MERN stack technology.`,
+        )}+ Years of experience in full-stack web development with core knowledge of MERN stack technology.`,
       },
       {
         content:
@@ -83,7 +83,7 @@ export const data = {
       },
       {
         content:
-          "Worked on 4 company projects and have built 15+ major projects on my own. I have learned a great deal about teamwork, leadership, and communication. After years of rigorous experience, here I am, looking for an opportunity as a Full Stack web developer.",
+          "Worked on 5+ company projects and have built 15+ major projects on my own. I have learned a great deal about teamwork, leadership, and communication. After years of rigorous experience, here I am, looking for an opportunity as a Full Stack web developer or Frontend developer.",
       },
     ],
   },
@@ -103,8 +103,9 @@ export const data = {
       github: "https://github.com/Sagarsandbhor17/Beautyhub",
       video_watch_on: "Google Drive",
       is_github_private: false,
-      video:
-        "https://drive.google.com/file/d/1f1TdXvjqz58Ndki73CsjqVV0vgNA8SQT/view?usp=sharing",
+      video: "",
+      // video:
+      //   "https://drive.google.com/file/d/1f1TdXvjqz58Ndki73CsjqVV0vgNA8SQT/view?usp=sharing",
       deploy_link: "https://beautyhubproject.netlify.app/",
       deployed_on: "Netlify",
     },
@@ -121,8 +122,9 @@ export const data = {
       github: "https://github.com/amitchouhan948/possible-temper-2642",
       video_watch_on: "Google Drive",
       is_github_private: false,
-      video:
-        "https://drive.google.com/file/d/1GM3cAQ-ztVqKW6MdbhrCQJoL_Sv9h7dN/view?usp=sharing",
+      video: "",
+      // video:
+      //   "https://drive.google.com/file/d/1GM3cAQ-ztVqKW6MdbhrCQJoL_Sv9h7dN/view?usp=sharing",
       deploy_link: "https://bitrix24in.netlify.app/",
       deployed_on: "Netlify",
     },
@@ -139,8 +141,9 @@ export const data = {
         "https://github.com/Abhishek07788/impartial-honey-6054/tree/main/lyst.com",
       is_github_private: false,
       video_watch_on: "LinkeDin",
-      video:
-        "https://www.linkedin.com/posts/abhishekpratapsolanki_project-lyst-react-activity-6970317062455848960-TnLX?utm_source=share&utm_medium=member_desktop",
+      video: "",
+      // video:
+      //   "https://www.linkedin.com/posts/abhishekpratapsolanki_project-lyst-react-activity-6970317062455848960-TnLX?utm_source=share&utm_medium=member_desktop",
       deploy_link: "https://cute-souffle-8b7dcd.netlify.app/",
       deployed_on: "Netlify",
     },
@@ -156,8 +159,9 @@ export const data = {
       github: "https://github.com/Abhishek07788/Abhishek-Portfolio",
       is_github_private: true,
       video_watch_on: "Google Drive",
-      video:
-        "https://drive.google.com/file/d/1QwJVeoJ4oPI1SZcC60JrgzbNMwmPBnjC/view?usp=sharing",
+      video: "",
+      // video:
+      //   "https://drive.google.com/file/d/1QwJVeoJ4oPI1SZcC60JrgzbNMwmPBnjC/view?usp=sharing",
       deploy_link: "https://abhishek07788.github.io/",
       deployed_on: "GitHub",
     },
@@ -173,8 +177,9 @@ export const data = {
       github: "https://github.com/rohan209547mourya/deeply-tub-2367",
       video_watch_on: "Google Drive",
       is_github_private: false,
-      video:
-        "https://drive.google.com/file/d/1NBMMAl62B0tKTbssrkckqv4ycGUz5bmx/view?usp=sharing",
+      video: "",
+      // video:
+      //   "https://drive.google.com/file/d/1NBMMAl62B0tKTbssrkckqv4ycGUz5bmx/view?usp=sharing",
       deploy_link: "https://bright-sopapillas-48eab1.netlify.app/html/business",
       deployed_on: "Netlify",
     },
@@ -182,7 +187,7 @@ export const data = {
       image: "./assets/cosheduleClone.gif",
       name: "Coschedule - Clone",
       description:
-        "This website is a clone of 'coschedule.com'. CoSchedule Marketing Suite is a family of agile marketing products that help you coordinate your process, projects, and teams. In this team project, I created the navbar, Home page, footer part, Headline page, and Built Your Case For CoSchedule page.",
+        "This website is a clone of 'coschedule.com'. CoSchedule Marketing Suite is a family of agile marketing products that help you coordinate your process, projects, and teams. In this team project, I created the navbar, Home page, footer part and Headline page.",
       is_group_project: true,
       collaborators: 4,
       duration: "05 Days",
@@ -190,28 +195,46 @@ export const data = {
       github: "https://github.com/Abhishek07788/CoShedule-Website-Project-",
       video_watch_on: "Google Drive",
       is_github_private: false,
-      video:
-        "https://drive.google.com/file/d/1aZrzo1eFi9F2us2oqO7jp4QnQj7jfcB-/view?usp=sharing",
+      video: "",
+      // video:
+      //   "https://drive.google.com/file/d/1aZrzo1eFi9F2us2oqO7jp4QnQj7jfcB-/view?usp=sharing",
       deploy_link: "https://bejewelled-lebkuchen-8a5107.netlify.app/",
       deployed_on: "Netlify",
     },
-    // {
-    //   image: "./assets/chat-app.gif",
-    //   name: "Live Chat App",
-    //   description:
-    //     "The Live Chat App enables one-on-one conversations with blocking features for user control. It showcases live typing status and Online status, enhancing real-time interaction and communication privacy.",
-    //   is_group_project: false,
-    //   collaborators: 0,
-    //   duration: "09 Days",
-    //   tech_stacks:
-    //     "NextJS | TypeScript | Material UI | axios | socket-io-client | JavaScript | socket.io | NODEJS | EXPRESS | MONGODB | JWT",
-    //   github: "https://github.com/Abhishek07788/live-chat-app",
-    //   video_watch_on: "Video is not Available",
-    //   is_github_private: false,
-    //   video: "",
-    //   deploy_link: "",
-    //   deployed_on: "(Link is not Available)",
-    // },
+    {
+      image: "./assets/chat-app.gif",
+      name: "Live Chat App",
+      description:
+        "The Live Chat App enables one-on-one conversations with blocking features for user control. It showcases live typing status and Online status, enhancing real-time interaction and communication privacy.",
+      is_group_project: false,
+      collaborators: 0,
+      duration: "09 Days",
+      tech_stacks:
+        "NextJS | TypeScript | Material UI | axios | socket-io-client | JavaScript | socket.io | NODEJS | EXPRESS | MONGODB | JWT",
+      github: "https://github.com/Abhishek07788/live-chat-app",
+      video_watch_on: "Video is not Available",
+      is_github_private: false,
+      video: "",
+      deploy_link: "",
+      deployed_on: "(Link is not Available)",
+    },
+    {
+      image: "./assets/music_player.png",
+      name: "Music Player",
+      description:
+        "Developed a music player application in one day, featuring a drag-and-drop music list, play, pause, next, previous controls, and a sliding progress bar for seamless user experience.",
+      is_group_project: false,
+      collaborators: 0,
+      duration: "01 Day",
+      tech_stacks:
+        "React | Javascript | CSS | Material UI | Audio | React-Beautiful-Dnd",
+      github: "https://github.com/Abhishek07788/music-player",
+      video_watch_on: "Video is not Available",
+      is_github_private: false,
+      video: "",
+      deploy_link: "https://my-dream-music.netlify.app/",
+      deployed_on: "Netlify",
+    },
   ],
 
   // --- GitHub overView --
@@ -241,24 +264,25 @@ export const data = {
     ],
     stats: [
       {
-        number: 2000,
-        title: "Hours",
-        subTitle: "Coding",
+        number: getTotalExperience("01-04-2022") + "y",
+        title: "Total",
+        subTitle: "Experience",
       },
+
       {
-        number: 15,
+        number: 20,
         title: "Projects",
         subTitle: "Done",
+      },
+      {
+        number: 5,
+        title: "Projects",
+        subTitle: "Company",
       },
       {
         number: 500,
         title: "DSA",
         subTitle: "Solved (OJ)",
-      },
-      {
-        number: 1000,
-        title: "Hours",
-        subTitle: "Dsa",
       },
     ],
   },
@@ -368,9 +392,9 @@ export function getTotalExperience(inputDate) {
   } else {
     // Check if totalYears is a whole number
     if (Number.isInteger(totalYears)) {
-      return `${totalYears}+ ${totalYears > 1 ? "Years" : "Year"}`;
+      return `${totalYears}`;
     } else {
-      return `${totalYears.toFixed(1)}+ Years`;
+      return `${totalYears.toFixed(1)}`;
     }
   }
 }

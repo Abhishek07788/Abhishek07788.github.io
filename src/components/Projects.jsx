@@ -86,6 +86,7 @@ const Projects = (props) => {
               style={theme1}
             >
               <Image
+                h={["180px", "220px", 60, 72]}
                 border={`2px solid ${data.universal.color}`}
                 w={"100%"}
                 borderRadius={10}
