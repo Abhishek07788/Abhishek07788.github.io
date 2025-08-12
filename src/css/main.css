@@ -179,3 +179,168 @@
   border-radius: 10px;
   padding: 10px;
 }
+
+.experience-section {
+  padding: 80px 0;
+  background: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.experience-section .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.experience-section h2 {
+  text-align: center;
+  color: var(--primary);
+  margin-bottom: 50px;
+  font-size: 2.5rem;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background: var(--chakra-colors-orange-500);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+  border-radius: 3px;
+}
+
+.timeline-item {
+  padding: 10px 40px;
+  position: relative;
+  width: 50%;
+  margin-bottom: 30px;
+}
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: var(--chakra-colors-orange-500);
+  border-radius: 50%;
+  top: 15px;
+  z-index: 1;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  left: 50%;
+}
+
+.left::after {
+  right: -12px;
+}
+
+.right::after {
+  left: -12px;
+}
+
+.timeline-content {
+  padding: 20px;
+  background: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+}
+
+.timeline-content .date {
+  color: var(--primary);
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.timeline-content h3 {
+  margin: 10px 0;
+  color: var(--text);
+  font-size: 1.2rem;
+}
+
+.timeline-content h4 {
+  color: var(--primary);
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.timeline-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.timeline-content li {
+  color: var(--text);
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  position: relative;
+  padding-left: 20px;
+}
+
+.timeline-content li::before {
+  content: "•";
+  color: var(--primary);
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .timeline::after {
+    left: 31px;
+  }
+  
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 20px;
+  }
+  
+  .right {
+    left: 0;
+  }
+  
+  .left::after, .right::after {
+    left: 19px;
+  }
+}
+
+/* CSS Variables */
+:root {
+  --primary: #fe9119;
+  --bg: #ffffff;
+  --text: #333333;
+  --card-bg: #ffffff;
+}
+
+/* Dark mode variables if needed */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1a1a1a;
+    --text: #ffffff;
+    --card-bg: #2d2d2d;
+  }
+}

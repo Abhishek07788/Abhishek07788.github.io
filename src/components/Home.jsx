@@ -25,12 +25,12 @@ const Home = (props) => {
     if (checkTheme) {
       setTheme({
         color: "white",
-        backgroundColor: "#0f1624",
+        backgroundColor: "#1a202c",
       });
     } else {
       setTheme({
         color: "black",
-        backgroundColor: "#edf2f8",
+        backgroundColor: "#ffffff",
       });
     }
   }, [checkTheme]);
@@ -43,7 +43,7 @@ const Home = (props) => {
       // Wait for a moment before initiating download
       const a = document.createElement("a");
       a.href = link;
-      a.download = "Abhishek-Pratap-Solanki-Resume.pdf"; // If you want to specify a filename, replace '' with the desired filename
+      a.download = `${data.profile.resume_name}.pdf`; // If you want to specify a filename, replace '' with the desired filename
       a.click(); // Programmatically trigger the download
     }, 100);
   }
@@ -123,21 +123,9 @@ const Home = (props) => {
               </span>
             </Heading>
           </div>
-
-          {/* <Heading
-            color={data.universal.color}
-            mt={1}
-            ml={[-10, 13, 0, 50]}
-            fontSize={[17, 18, 18, 20]}
-          >
-            Experience:
-          </Heading>
           <Heading mt={1} ml={[-10, 13, 0, 50]} fontSize={[17, 18, 18, 20]}>
-            {data.profile.company_name},
+            at {data.profile.company_name}
           </Heading>
-          <Heading mt={0} ml={[-10, 13, 0, 50]} fontSize={[17, 18, 18, 20]}>
-            {data.profile.date_of_joining} To {data.profile.date_of_left}.
-          </Heading> */}
 
           {/*======================== Social Media Icons ======================= */}
           <Box
@@ -212,7 +200,7 @@ const Home = (props) => {
 
             <a
               href={data.profile.resume}
-              download={`${data.profile.first_name}-${data.profile.meddle_name}-${data.profile.last_name}-Resume`}
+              download={`${data.profile.resume_name}.pdf`}
             >
               <Button
                 onClick={() =>

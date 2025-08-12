@@ -1,6 +1,16 @@
 import React, { useRef } from "react";
 import { useState } from "react";
 import Home from "./Home";
+import About from "./About";
+import Experience from "./Experience";
+import Projects from "./Projects";
+import Skills from "./Skills";
+import Contact from "./Contact";
+import Slide from "./Slide";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import GitHub from "./GitHub";
+import { data } from "../data/data";
 import {
   SimpleGrid,
   Box,
@@ -11,18 +21,13 @@ import {
 } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { useEffect } from "react";
-import About from "./About";
-import Projects from "./Projects";
-import Skills from "./Skills";
-import Contact from "./Contact";
-import Slide from "./Slide";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import GitHub from "./GitHub";
-import { data } from "../data/data";
 
 const Main = () => {
-  const [checkTheme, setCheckTheme] = useState(true);
+  const [checkTheme, setCheckTheme] = useState(() => {
+    // Get theme from localStorage or default to true (dark theme)
+    const savedTheme = localStorage.getItem("theme");
+    return savedTheme ? JSON.parse(savedTheme) : true;
+  });
   const [theme, setTheme] = useState({});
   const [loading, setLoading] = useState(false);
   const projectScroll = useRef(null);
@@ -30,6 +35,7 @@ const Main = () => {
   const aboutScroll = useRef(null);
   const skillScroll = useRef(null);
   const contactScroll = useRef(null);
+  const experienceScroll = useRef(null);
   const Toast = useToast();
 
   useEffect(() => {
@@ -43,15 +49,8 @@ const Main = () => {
   }, []);
 
   const Darkmode = () => {
-    if (checkTheme) {
-      Toast({
-        title: "Light Mode ☀️",
-        status: "success",
-        duration: 1500,
-        isClosable: true,
-        position: "bottom-left",
-      });
-    } else {
+    const newTheme = !checkTheme;
+    if (newTheme) {
       Toast({
         title: "Dark Mode 🌑",
         status: "success",
@@ -60,16 +59,23 @@ const Main = () => {
         position: "bottom-left",
         variant: "left-accent",
       });
+    } else {
+      Toast({
+        title: "Light Mode ☀️",
+        status: "success",
+        duration: 1500,
+        isClosable: true,
+        position: "bottom-left",
+      });
     }
 
-    //--------
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
     }, 0);
 
-    //--------
-    setCheckTheme(!checkTheme);
+    setCheckTheme(newTheme);
+    localStorage.setItem("theme", JSON.stringify(newTheme));
   };
 
   // =================== Scrolling =====================>
@@ -87,6 +93,9 @@ const Main = () => {
 
   const executeContact = () =>
     contactScroll.current.scrollIntoView({ behavior: "smooth" });
+
+  const executeExperience = () =>
+    experienceScroll.current.scrollIntoView({ behavior: "smooth" });
 
   // =================== Animation =====================>
 
@@ -118,7 +127,7 @@ const Main = () => {
       // Wait for a moment before initiating download
       const a = document.createElement("a");
       a.href = link;
-      a.download = "Abhishek-Pratap-Solanki-Resume.pdf"; // If you want to specify a filename, replace '' with the desired filename
+      a.download = `${data.profile.resume_name}.pdf`; // If you want to specify a filename, replace '' with the desired filename
       a.click(); // Programmatically trigger the download
     }, 100);
   }
@@ -170,13 +179,11 @@ const Main = () => {
           <SimpleGrid
             mr={[5]}
             ml={["-8"]}
-            // w={["0%", "0%", "160%", "44%"]}
             fontSize={"16px"}
             fontWeight={600}
             display="flex"
             alignItems={"center"}
             style={theme}
-            // border="1px solid red"
             float={"right"}
             gap={["0", "0", "2", "5"]}
           >
@@ -200,9 +207,9 @@ const Main = () => {
               _hover={{
                 color: data.universal.color,
               }}
-              onClick={executeAbout}
+              onClick={executeExperience}
             >
-              ABOUT
+              EXPERIENCE
             </Text>
             <Text
               cursor={"pointer"}
@@ -327,6 +334,7 @@ const Main = () => {
         >
           <Slide
             theme={theme}
+            executeExperience={executeExperience}
             executeAbout={executeAbout}
             executeSkill={executeSkill}
             executeProject={executeProject}
@@ -339,6 +347,7 @@ const Main = () => {
       {/*======================== ( Components ) ======================= */}
 
       <Home checkTheme={checkTheme} />
+      <Experience experienceScroll={experienceScroll} checkTheme={checkTheme} />
       <About aboutScroll={aboutScroll} checkTheme={checkTheme} />
       <Projects projectScroll={projectScroll} checkTheme={checkTheme} />
       <GitHub GithubScroll={GithubScroll} checkTheme={checkTheme} />

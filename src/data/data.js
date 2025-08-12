@@ -1,3 +1,7 @@
+export const Start_Join = "01-05-2023"; // Start date of joining in "DD-MM-YYYY" format
+export const company_projects = 15;
+export const own_projects = 25;
+
 export const data = {
   // --- Home --
   universal: {
@@ -11,19 +15,15 @@ export const data = {
     full_name: "Abhishek Pratap Solanki",
     profile_image: "./assets/profile_pic.png",
     designation: "Full Stack Developer",
-    company_name: "Digited Labs Private Limited, Hyderabad",
-    date_of_joining: "01 May 2023",
-    date_of_left: "31 May 2024",
-    date_of_IT: "01-04-2022",
+    company_name: "Zyod Commerce Private Limited, Gurgaon, Haryana, India.",
     mobile: "9758207006",
     email: "abhisheksolanki1020.gmail.com",
     github_username: "Abhishek07788",
     linkedin_handle: "http://www.linkedin.com/in/abhishekpratapsolanki",
     github_handle: "https://github.com/Abhishek07788",
     website: "https://abhishek07788.github.io/",
-    resume: "./assets/Abhishek-Pratap-Solanki-Resume.pdf",
-    resume_url:
-      "https://drive.google.com/file/d/11cBo69VOoq3wcwtPFDMv0t6R7MeHgrB8/view?usp=sharing",
+    resume: "./assets/Abhishek_Solanki_Software_Developer.pdf",
+    resume_name: "Abhishek_Solanki_Software_Developer",
     email_img: "./assets/emailimg.png",
     profile_img_bg: "./assets/yellowBrushImg.png",
     stop_form: false,
@@ -64,26 +64,59 @@ export const data = {
     hii_logo: "./assets/hii_gif.gif",
   },
 
+  // --- Experience ---
+  experience: {
+    total: getTotalExperience(Start_Join),
+    companies: [
+      {
+        duration: "August 2024 - Present",
+        company: "Zyod Commerce Private Limited - Gurgaon, Haryana, India",
+        role: "Full Stack Developer",
+        description: [
+          "Building and optimizing AI agents and scalable web applications using technologies such as React.js, Next.js, Redux, TypeScript, TanStack (React Query), Node.js, Express.js, PostgreSQL, Sequelize, and JWT.",
+          "Focused on delivering high-performance frontend UI/UX and robust backend API development, aligned with product goals to improve functionality, user experience, and operational efficiency across the platform.",
+          "Implemented advanced state management, caching strategies, and API integrations to ensure seamless data flow and enhanced application performance.",
+        ],
+      },
+      {
+        duration: "May 2023 - July 2024",
+        company: "DigitEd Labs Private Limited - Hyderabad, Telangana, India",
+        role: "Full Stack Developer",
+        description: [
+          "Designed and implemented user interfaces for web and APP, including a leading ed-tech platform, using React Native, React JS, Redux, Typescript, Material UI, Next JS, Express JS, NodeJS, PostgreSQL.",
+          "Enhanced user experience by developing dynamic landing pages with lazy loading, infinite scrolling, and complex pagination, while resolving critical bugs.",
+          "Optimized performance through techniques that improved load times by 30% and ensured cross-browser compatibility.",
+          "Spearheaded SEO strategies to boost website visibility and user engagement by 20%, along with leading the development of interactive analytics report pages.",
+        ],
+      },
+    ],
+  },
+
   // ---- About me --
   about_me: {
     image: "./assets/AboutImg.gif",
     contents: [
       {
         content:
-          "Hello, my name is Abhishek Pratap Solanki, I am a Full Stack Developer at DigitEd Labs Private limited, Hyderabad.",
+          "Hello, my name is Abhishek Pratap Solanki. I am a Full Stack Developer currently working at Zyod Commerce Private Limited, Gurgaon, Haryana, India.",
       },
       {
-        content: `Quick learner and having ${getTotalExperience(
-          "01-04-2022"
-        )}+ Years of experience in full-stack web development with core knowledge of MERN stack technology.`,
+        content: `Full Stack Developer with over ${getTotalExperience(
+          Start_Join
+        )} years of comprehensive experience, Skilled in delivering
+          end-to-end web solutions using Next.js, React.js, Node.js, Express, PostgreSQL, and MongoDB. Proven
+          expertise in managing international clients, leading teams, and developing scalable, production-ready
+          applications.`,
       },
       {
-        content:
-          "Hands on experience in building React Web and Android App. Works efficiently both in frontend as well as backend and is proficient in Data Structure and Algorithms.",
+        content: `Strong focus on problem-solving, UI/UX optimization, and backend performance. Excellent
+          communication and leadership skills, consistently demonstrated in team-based and client-facing
+          environments.`,
       },
       {
-        content:
-          "Worked on 5+ company projects and have built 15+ major projects on my own. I have learned a great deal about teamwork, leadership, and communication. After years of rigorous experience, here I am, looking for an opportunity as a Full Stack web developer or Frontend developer.",
+        content: `Worked on ${company_projects}+ company projects and built ${own_projects}+ major projects on my own. 
+          These experiences have helped me improve my skills in teamwork, leadership, and communication. 
+          I’m now looking for a role as a Full Stack or Frontend Developer.`,
       },
     ],
   },
@@ -264,25 +297,25 @@ export const data = {
     ],
     stats: [
       {
-        number: getTotalExperience("01-04-2022") + "y",
+        number: getTotalExperience(Start_Join) + "y",
         title: "Total",
         subTitle: "Experience",
       },
 
       {
-        number: 20,
+        number: own_projects,
         title: "Projects",
-        subTitle: "Done",
+        subTitle: "Own",
       },
       {
-        number: 5,
+        number: company_projects,
         title: "Projects",
-        subTitle: "Company",
+        subTitle: "In Company",
       },
       {
         number: 500,
         title: "DSA",
-        subTitle: "Solved (OJ)",
+        subTitle: "Solved (On OJ)",
       },
     ],
   },

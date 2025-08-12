@@ -1,11 +1,11 @@
-# Getting Started with Create React App
+# Getting Started with Create Abhishek Portfolio
 
 <h1>My POrtfolio<h1/>
 <img src="https://abhishek07788.github.io/static/media/portfolio.2c6e8d9cafc63b3b945d.gif" alt="Portfolio">
 
 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create Abhishek Portfolio](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
@@ -46,7 +46,7 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You can learn more in the [Create Abhishek Portfolio documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 

@@ -13,10 +13,11 @@ import { useRef } from "react";
 import { data } from "../data/data";
 const Slide = (props) => {
   const {
-    executeSkill,
+    executeExperience,
     executeAbout,
     executeContact,
     executeProject,
+    executeSkill,
     executeGithub,
     theme,
   } = props;
@@ -27,6 +28,11 @@ const Slide = (props) => {
   const homefunc = () => {
     onClose();
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
+
+  const experiencefunc = () => {
+    onClose();
+    executeExperience();
   };
 
   const aboutfunc = () => {
@@ -52,6 +58,7 @@ const Slide = (props) => {
     onClose();
     executeContact();
   };
+
   return (
     <>
       <Box bg={"transparent"} fontSize="25" ref={btnRef} onClick={onOpen}>
@@ -79,6 +86,15 @@ const Slide = (props) => {
                   onClick={homefunc}
                 >
                   HOME
+                </Text>
+                <Text
+                  p="1"
+                  fontSize={15}
+                  borderRadius={5}
+                  _hover={{ bg: data.universal.color, color: "#ffff" }}
+                  onClick={experiencefunc}
+                >
+                  EXPERIENCE
                 </Text>
                 <Text
                   p="1"
