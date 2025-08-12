@@ -58,7 +58,7 @@ const Experience = (props) => {
             <div
               key={index}
               className={`timeline-item ${index % 2 === 0 ? "left" : "right"}`}
-              data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+              //data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
             >
               <Box
                 className="timeline-content"
