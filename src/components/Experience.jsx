@@ -48,16 +48,9 @@ const Experience = (props) => {
    }, [checkTheme]);
 
   return (
-    <div ref={experienceScroll} className="mainDiv" style={theme}>
-      <Container maxW="container.xl" py={8} style={theme}>
-        <Heading
-          textAlign="center"
-          mb={10}
-          data-aos="fade-up"
-          fontSize={["30px", "35px", "40px"]}
-        >
-          Experience{" "}
-          <span style={{ color: data.universal.color }}>({data.experience.total}+ Yrs)</span>
+    <div ref={experienceScroll} className="mainDivProject" style={theme}>
+        <Heading fontSize={40} mb={6}>
+          Experience <span style={{ color: data.universal.color }}>({data.experience.total}+ Yrs)</span>
         </Heading>
 
         <div className="timeline">
@@ -113,7 +106,6 @@ const Experience = (props) => {
             </div>
           ))}
         </div>
-      </Container>
     </div>
   );
 };
