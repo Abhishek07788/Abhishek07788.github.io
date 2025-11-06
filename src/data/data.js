@@ -23,11 +23,11 @@ export const data = {
     github_handle: "https://github.com/Abhishek07788",
     website: "https://abhishek07788.github.io/",
     resume: "./assets/Abhishek_Solanki_Software_Developer.pdf",
-    resume_name: "Abhishek_Solanki_Software_Developer",
+    resume_name: "Abhishek-Pratap-Solanki-Resume",
     email_img: "./assets/emailimg.png",
     profile_img_bg: "./assets/yellowBrushImg.png",
     stop_form: false,
-
+    
     social_icons: [
       {
         link: "http://www.linkedin.com/in/abhishekpratapsolanki",
@@ -180,24 +180,24 @@ export const data = {
       deploy_link: "https://cute-souffle-8b7dcd.netlify.app/",
       deployed_on: "Netlify",
     },
-    {
-      image: "./assets/portfolio.gif",
-      name: "My Portfolio",
-      description:
-        "This is my fully responsive portfolio, which I recently made using React & Chakra UI. This website has Dark mode, scrolling functionality, etc.",
-      is_group_project: false,
-      collaborators: null,
-      duration: "04 Days",
-      tech_stacks: "ReactJS | CSS | JavaScript | Chakra UI | AOS Animation",
-      github: "https://github.com/Abhishek07788/Abhishek-Portfolio",
-      is_github_private: true,
-      video_watch_on: "Google Drive",
-      video: "",
-      // video:
-      //   "https://drive.google.com/file/d/1QwJVeoJ4oPI1SZcC60JrgzbNMwmPBnjC/view?usp=sharing",
-      deploy_link: "https://abhishek07788.github.io/",
-      deployed_on: "GitHub",
-    },
+    // {
+    //   image: "./assets/portfolio.gif",
+    //   name: "My Portfolio",
+    //   description:
+    //     "This is my fully responsive portfolio, which I recently made using React & Chakra UI. This website has Dark mode, scrolling functionality, etc.",
+    //   is_group_project: false,
+    //   collaborators: null,
+    //   duration: "04 Days",
+    //   tech_stacks: "ReactJS | CSS | JavaScript | Chakra UI | AOS Animation",
+    //   github: "https://github.com/Abhishek07788/Abhishek-Portfolio",
+    //   is_github_private: true,
+    //   video_watch_on: "Google Drive",
+    //   video: "",
+    //   // video:
+    //   //   "https://drive.google.com/file/d/1QwJVeoJ4oPI1SZcC60JrgzbNMwmPBnjC/view?usp=sharing",
+    //   deploy_link: "https://abhishek07788.github.io/",
+    //   deployed_on: "GitHub",
+    // },
     {
       image: "./assets/animotoClone.gif",
       name: "Animoto - Clone",

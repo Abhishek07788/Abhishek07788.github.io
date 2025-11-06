@@ -30,7 +30,7 @@
   width: 0ch;
   overflow: hidden;
   white-space: nowrap;
-  animation: tagline 10s infinite alternate;
+  animation: tagline 6s infinite alternate;
 }
 
 @keyframes tagline {
@@ -38,7 +38,7 @@
     width: 0ch;
   }
   50% {
-    width: 23.5ch;
+    width: 20.5ch;
   }
 }
 

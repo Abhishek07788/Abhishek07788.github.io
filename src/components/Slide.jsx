@@ -59,6 +59,19 @@ const Slide = (props) => {
     executeContact();
   };
 
+  function downloadResume(event) {
+    event.preventDefault(); // Prevents default behavior (following the link)
+    const link = data.profile.resume; // Get the link from the clicked element
+    window.open(link, "_blank"); // Open the link in a new tab
+    setTimeout(() => {
+      // Wait for a moment before initiating download
+      const a = document.createElement("a");
+      a.href = link;
+      a.download = `${data.profile.resume_name}.pdf`; // If you want to specify a filename, replace '' with the desired filename
+      a.click(); // Programmatically trigger the download
+    }, 100);
+  }
+
   return (
     <>
       <Box bg={"transparent"} fontSize="25" ref={btnRef} onClick={onOpen}>
@@ -142,8 +155,7 @@ const Slide = (props) => {
                   CONTACT
                 </Text>
                 <a
-                  href="https://drive.google.com/file/d/11cBo69VOoq3wcwtPFDMv0t6R7MeHgrB8/view?usp=sharing"
-                  target="_blank"
+                  onClick={downloadResume}
                 >
                   <Text
                     p="1"
