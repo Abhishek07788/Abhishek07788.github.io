@@ -366,16 +366,16 @@ export const data = {
     // ------------------------ TOOLS & WORKFLOW ------------------------
     { name: "VS Code", image: "./assets/vscode.png", category: "tools" },
     { name: "Git", image: "./assets/git.svg", category: "tools" },
-    { name: "Github Copilot", image: "./assets/githubcopilot.png", category: "tools" },
     { name: "NPM", image: "./assets/npm.svg", category: "tools" },
     { name: "Yarn", image: "./assets/yarn.png", category: "tools" },
     { name: "Postman", image: "./assets/postman.png", category: "tools" },
     { name: "Vercel", image: "./assets/vercel.png", category: "tools" },
-
+    
     // ------------------------ AI & AGENTIC ------------------------
     { name: "Claude AI", image: "./assets/claudeai.png", category: "ai" },
     { name: "OpenAI", image: "./assets/openai.png", category: "ai" },
     { name: "Zed AI", image: "./assets/zedai.png", category: "ai" },
+    { name: "Github Copilot", image: "./assets/githubcopilot.png", category: "ai" },
   ]
 };
 
