@@ -268,6 +268,23 @@ export const data = {
       deploy_link: "https://my-dream-music.netlify.app/",
       deployed_on: "Netlify",
     },
+    {
+      image: "./assets/link_sharing_app.gif",
+      name: "Link Sharing App",
+      description:
+        "A sleek and dynamic link-sharing application where users can add, reorder, and customize links for different platforms. Features platform-specific validation, drag-and-drop sorting, and persistent storage.",
+      is_group_project: false,
+      collaborators: 0,
+      duration: "1 Week",
+      tech_stacks:
+        "Next.js (Pages Router) | React | CSS Modules | React DnD | Axios | Node.js | Express.js | MongoDB | JWT | Bcrypt",
+      github: "https://github.com/Abhishek07788/Link-Sharing-App",
+      video_watch_on: "Video is not Available",
+      is_github_private: false,
+      video: "",
+      deploy_link: "https://link-sharing-app-five-psi.vercel.app/",
+      deployed_on: "Vercel",
+    }
   ],
 
   // --- GitHub overView --
@@ -322,79 +339,44 @@ export const data = {
 
   // --- Skills --
   skills: [
-    {
-      name: "HTML",
-      image: "./assets/html.svg",
-    },
-    {
-      name: "CSS",
-      image: "./assets/css.svg",
-    },
-    {
-      name: "JavaScript",
-      image: "./assets/javascript.svg",
-    },
-    {
-      name: "TypeScript",
-      image: "./assets/typescript.png",
-    },
-    {
-      name: "React JS",
-      image: "./assets/react.svg",
-    },
-    {
-      name: "React Native",
-      image: "./assets/reactnative.png",
-    },
-    {
-      name: "Expo",
-      image: "./assets/expo.png",
-    },
-    {
-      name: "Next JS",
-      image: "./assets/nextjs.png",
-    },
-    {
-      name: "Redux",
-      image: "./assets/redux.svg",
-    },
-    {
-      name: "Chakra UI",
-      image: "./assets/chakraui.png",
-    },
-    {
-      name: "Material UI",
-      image: "./assets/materialui.svg",
-    },
-    {
-      name: "Express",
-      image: "./assets/express.svg",
-    },
-    {
-      name: "Node JS",
-      image: "./assets/nodejs.svg",
-    },
-    {
-      name: "Mongo DB",
-      image: "./assets/mongodb.svg",
-    },
-    {
-      name: "Git",
-      image: "./assets/git.svg",
-    },
-    {
-      name: "Yarn",
-      image: "./assets/yarn.png",
-    },
-    {
-      name: "NPM",
-      image: "./assets/npm.svg",
-    },
-    {
-      name: "Post Man",
-      image: "./assets/postman.png",
-    },
-  ],
+    // ------------------------ FRONTEND ------------------------
+    { name: "HTML", image: "./assets/html.svg", category: "frontend" },
+    { name: "CSS", image: "./assets/css.svg", category: "frontend" },
+    { name: "JavaScript", image: "./assets/javascript.svg", category: "frontend" },
+    { name: "TypeScript", image: "./assets/typescript.png", category: "frontend" },
+    { name: "React JS", image: "./assets/react.svg", category: "frontend" },
+    { name: "Next JS", image: "./assets/nextjs.png", category: "frontend" },
+    { name: "Redux", image: "./assets/redux.svg", category: "frontend" },
+    { name: "Material UI", image: "./assets/materialui.svg", category: "frontend" },
+    { name: "Chakra UI", image: "./assets/chakraui.png", category: "frontend" },
+    { name: "React Native", image: "./assets/reactnative.png", category: "frontend" },
+    { name: "Expo", image: "./assets/expo.png", category: "frontend" },
+
+    // ------------------------ BACKEND ------------------------
+    { name: "Node JS", image: "./assets/nodejs.svg", category: "backend" },
+    { name: "Express", image: "./assets/express.svg", category: "backend" },
+    { name: "Mongoose", image: "./assets/mongoose.png", category: "backend" },
+    { name: "MongoDB", image: "./assets/mongodb.svg", category: "backend" },
+    { name: "Sequelize", image: "./assets/sequelize.png", category: "backend" },
+    { name: "PostgreSQL", image: "./assets/postgresql.png", category: "backend" },
+    { name: "GraphQL", image: "./assets/graphql.png", category: "backend" },
+    { name: "JWT", image: "./assets/jwt.png", category: "backend" },
+    { name: "Socket.io", image: "./assets/socketio.png", category: "backend" },
+
+    // ------------------------ TOOLS & WORKFLOW ------------------------
+    { name: "VS Code", image: "./assets/vscode.png", category: "tools" },
+    { name: "Git", image: "./assets/git.svg", category: "tools" },
+    { name: "Github Copilot", image: "./assets/githubcopilot.png", category: "tools" },
+    { name: "NPM", image: "./assets/npm.svg", category: "tools" },
+    { name: "Yarn", image: "./assets/yarn.png", category: "tools" },
+    { name: "Postman", image: "./assets/postman.png", category: "tools" },
+    { name: "Vercel", image: "./assets/vercel.png", category: "tools" },
+
+    // ------------------------ AI & AGENTIC ------------------------
+    { name: "Claude AI", image: "./assets/claudeai.png", category: "ai" },
+    { name: "OpenAI", image: "./assets/openai.png", category: "ai" },
+    { name: "Zed AI", image: "./assets/zedai.png", category: "ai" },
+  ]
 };
 
 export function getTotalExperience(inputDate) {

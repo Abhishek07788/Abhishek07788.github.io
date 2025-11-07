@@ -86,7 +86,7 @@ const GitHub = (props) => {
       </Heading>
 
       {/* -------- ( Graph Chart ) ---------- */}
-      {/* <Image
+      <Image
         data-aos="zoom-in"
         style={theme1}
         w={["80%", "80%", "80%", "70%"]}
@@ -103,10 +103,10 @@ const GitHub = (props) => {
         }}
         src={
           checkTheme
-            ? "https://activity-graph.herokuapp.com/graph?username=Abhishek07788&theme=github"
-            : "https://activity-graph.herokuapp.com/graph?username=Abhishek07788&"
+          ? "https://github-readme-activity-graph.vercel.app/graph?username=abhishek07788&theme=tokyo-night&hide_border=true&radius=6"
+          : "https://github-readme-activity-graph.vercel.app/graph?username=abhishek07788&bg_color=ffffff&color=ff7f00&line=ff7f00&point=ff7f00&area=true&hide_border=true"
         }
-      /> */}
+      />
 
       <Box data-aos="zoom-in" w={["80%", "80%", "80%", "70%"]} m="auto" mt="5">
         <SimpleGrid columns={[1, 1, 2, 2]} data-aos="zoom-in" w="100%" gap={5}>
