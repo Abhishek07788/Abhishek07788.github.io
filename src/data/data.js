@@ -1,6 +1,7 @@
 export const Start_Join = "01-05-2023"; // Start date of joining in "DD-MM-YYYY" format
-export const company_projects = 15;
+export const company_projects = 16;
 export const own_projects = 25;
+const CURRENT_COMPANY = 'Animall Technology Private Limited - Gurgaon, Haryana, India'
 
 export const data = {
   // --- Home --
@@ -15,7 +16,7 @@ export const data = {
     full_name: "Abhishek Pratap Solanki",
     profile_image: "./assets/profile_pic.png",
     designation: "Full Stack Developer",
-    company_name: "Zyod Commerce Private Limited, Gurgaon, Haryana, India.",
+    company_name: `${CURRENT_COMPANY}.`,
     mobile: "9758207006",
     email: "abhisheksolanki1020.gmail.com",
     github_username: "Abhishek07788",
@@ -69,19 +70,31 @@ export const data = {
     total: getTotalExperience(Start_Join),
     companies: [
       {
-        duration: "August 2024 - Present",
-        company: "Zyod Commerce Private Limited - Gurgaon, Haryana, India",
-        role: "Full Stack Developer",
+        duration: "December 2025 - Present",
+        company: CURRENT_COMPANY,
+        role: "Full Stack Software Developer",
         description: [
-          "Building and optimizing AI agents and scalable web applications using technologies such as React.js, Next.js, Redux, TypeScript, TanStack (React Query), Node.js, Express.js, PostgreSQL, Sequelize, and JWT.",
-          "Focused on delivering high-performance frontend UI/UX and robust backend API development, aligned with product goals to improve functionality, user experience, and operational efficiency across the platform.",
-          "Implemented advanced state management, caching strategies, and API integrations to ensure seamless data flow and enhanced application performance.",
+          "Building and deploying new features for AI-driven, scalable web apps using React, Next.js, TypeScript, Node, Express, PostgreSQL, and JWT, with AWS for hosting and infrastructure. Focused on fast UI delivery, solid APIs, and reliable performance.",
+          "Implementing CI/CD pipelines to streamline development, reduce deployment friction, and maintain consistency across environments.",
+          "Collaborating closely with product and design teams to deliver features that are both technically strong and user-focused.",
+          "Optimizing database queries and backend workflows to handle increasing traffic and data growth without performance drops.",
+          "Improving authentication, authorization, and data protection practices to maintain secure user experiences."
+        ],
+      },
+      {
+        duration: "August 2024 - December 2025",
+        company: "Zyod Commerce Private Limited - Gurgaon, Haryana, India",
+        role: "Full Stack Software Developer",
+        description: [
+          "Built and optimized AI agents and scalable web applications using React.js, Next.js, Redux, TypeScript, TanStack (React Query), Node.js, Express.js, PostgreSQL, Sequelize, and JWT.",
+          "Focused on delivering high-performance frontend UI/UX and developing robust backend APIs aligned with product goals to improve functionality, user experience, and operational efficiency across the platform.",
+          "Implemented advanced state management, caching strategies, and API integrations to ensure seamless data flow and enhanced application performance."
         ],
       },
       {
         duration: "May 2023 - July 2024",
         company: "DigitEd Labs Private Limited - Hyderabad, Telangana, India",
-        role: "Full Stack Developer",
+        role: "Full Stack Software Developer",
         description: [
           "Designed and implemented user interfaces for web and APP, including a leading ed-tech platform, using React Native, React JS, Redux, Typescript, Material UI, Next JS, Express JS, NodeJS, PostgreSQL.",
           "Enhanced user experience by developing dynamic landing pages with lazy loading, infinite scrolling, and complex pagination, while resolving critical bugs.",
@@ -98,7 +111,7 @@ export const data = {
     contents: [
       {
         content:
-          "Hello, my name is Abhishek Pratap Solanki. I am a Full Stack Developer currently working at Zyod Commerce Private Limited, Gurgaon, Haryana, India.",
+          `Hello, my name is Abhishek Pratap Solanki. I am a Full Stack Developer currently working at ${CURRENT_COMPANY}.`,
       },
       {
         content: `Full Stack Developer with over ${getTotalExperience(

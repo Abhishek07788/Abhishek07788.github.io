@@ -95,8 +95,9 @@ const Experience = (props) => {
                       as="li"
                       key={idx}
                       style={{ color: checkTheme ? "white" : "black" }}
-                      mb={2}
+                      mb={4}
                       fontSize="sm"
+                      textAlign={"left"}
                     >
                       {desc}
                     </Text>
