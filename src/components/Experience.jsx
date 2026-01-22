@@ -49,7 +49,7 @@ const Experience = (props) => {
 
   return (
     <div ref={experienceScroll} className="mainDivProject" style={theme}>
-        <Heading fontSize={40} mb={6}>
+        <Heading fontSize={[32, 35, 36, 38]} mb={6}>
           Experience <span style={{ color: data.universal.color }}>({data.experience.total}+ Yrs)</span>
         </Heading>
 

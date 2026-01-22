@@ -302,6 +302,12 @@ export const data = {
 
   // --- GitHub overView --
   github: {
+    graphChart: {
+        light_theme_link: 
+          "https://github-readme-activity-graph.vercel.app/graph?username=abhishek07788&theme=tokyo-night&hide_border=true&radius=6",
+        dark_theme_link: 
+          "https://github-readme-activity-graph.vercel.app/graph?username=abhishek07788&bg_color=ffffff&color=ff7f00&line=ff7f00&point=ff7f00&area=true&hide_border=true",
+    },
     github_stats: [
       {
         name: "stat",

@@ -46,20 +46,20 @@ const Skills = (props) => {
       </Heading>
 
       {/* -------- Tabs -------- */}
-      <Box mt="34px" mb="12px" display="flex" justifyContent="center" gap="20px">
+      <Box mt="34px" mb="12px" display="flex" justifyContent="center" gap="8px">
         {["all", "frontend", "backend", "tools", "ai"].map((tab) => (
             <button
               key={tab}
               style={{
-                padding: activeTab === tab ? "6px 14px" : "4px 10px", // base size
-                borderRadius: "6px",
+                padding: activeTab === tab ? "4px 10px" : "2px 8px", // base size
+                borderRadius: "4px",
                 border: "1px solid",
                 background:
                   activeTab === tab ? data.universal.color : "transparent",
                 color: activeTab === tab ? "white" : theme1.color,
                 cursor: "pointer",
                 fontWeight: "500",
-                fontSize: window.innerWidth < 480 ? "12px" : "14px", // ✅ smaller on phones
+                fontSize: window.innerWidth < 480 ? "10px" : "12px", // ✅ smaller on phones
                 transition: "0.3s",
               }}
               onClick={() => setActiveTab(tab)}
